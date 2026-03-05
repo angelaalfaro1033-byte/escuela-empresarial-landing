@@ -1,17 +1,17 @@
 import { motion } from "motion/react";
-import heroImg from '../../assets/images/hero.jpg';
-import logoImg from '../../assets/images/logo.png';
+import heroImg from "../../assets/images/hero.jpg";
+import logoImg from "../../assets/images/logo.png";
 
 export function Header() {
   return (
     <header className="relative h-[80vh] min-h-[500px] text-white overflow-hidden">
       
-      {/* Imagen de fondo */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${heroImg})`,
-        }}
+      {/* Imagen de fondo optimizada */}
+      <img
+        src={heroImg}
+        alt="Hero Escuela Empresarial"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
       />
 
       {/* Overlay */}

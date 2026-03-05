@@ -4,15 +4,15 @@ import { SponsorLogos } from './components/SponsorLogos';
 import { Footer } from './components/Footer';
 import { motion } from 'motion/react';
 import { AboutSection } from './components/AboutSection';
-import nailImg from "../assets/images/Uñas.JPG";
-import makeupImg from "../assets/images/makeup.JPG";
+import nailImg from "../assets/images/Uñas.jpg";
+import makeupImg from "../assets/images/makeup.jpg";
 import colorimetriaImg from "./assets/images/colorimetria.jpg";
-import barberiaImg from "../assets/images/barberia.JPG";
+import barberiaImg from "../assets/images/barberia.jpg";
 import barismoImg from "../assets/images/barismo.jpg";
 import chocolateImg from "../assets/images/chocolate.jpg";
 import panaderiaImg from "../assets/images/panaderia.JPG";
 import motosImg from "../assets/images/motos.JPG";
-import decoracionImg from "../assets/images/manualidades.JPG";
+import decoracionImg from "../assets/images/manualidades.jpg";
 import { useEffect, useState } from "react";
 
 interface Course {
