@@ -1,32 +1,35 @@
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
+import heroImg from '../../assets/images/hero.jpg';
+import logoImg from '../../assets/images/logo.png';
 
 export function Header() {
   return (
     <header className="relative h-[80vh] min-h-[500px] text-white overflow-hidden">
       
-      {/* Imagen de fondo (Hero) */}
+      {/* Imagen de fondo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('src/assets/images/DSC05299.jpg')",
+          backgroundImage: `url(${heroImg})`,
         }}
       />
 
-      {/* Overlay oscuro para mejorar legibilidad */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto h-full flex flex-col items-center justify-center text-center px-6">
         
-        {/* Logo centrado */}
+        {/* Logo */}
         <motion.img
-          src="src/assets/images/ee_white 1.png"
+          src={logoImg}
           alt="Logo Escuela Empresarial"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="w-48 md:w-64 lg:w-72 mb-6 object-contain"
         />
+
         {/* Título */}
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
@@ -46,7 +49,6 @@ export function Header() {
         >
           Explora nuestros cursos y regístrate fácilmente
         </motion.p>
-
       </div>
     </header>
   );
