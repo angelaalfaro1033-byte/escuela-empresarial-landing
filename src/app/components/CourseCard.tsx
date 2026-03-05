@@ -6,6 +6,7 @@ interface CourseCardProps {
   description: string;
   image: string;
   partner: string;
+  location: string;
   available: boolean;
   registrationUrl?: string;
 }
@@ -15,6 +16,7 @@ export function CourseCard({
   description,
   image,
   partner,
+  location,
   available,
   registrationUrl = '#',
 }: CourseCardProps) {
@@ -40,33 +42,39 @@ export function CourseCard({
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
-        <p className="text-sm text-blue-600 font-medium mb-3">{partner}</p>
-        <p className="text-gray-600 mb-4 line-clamp-2">{description}</p>
-        
-        <button
-          onClick={() => {
-            if (available && registrationUrl !== '#') {
-              window.open(registrationUrl, '_blank');
-            }
-          }}
-          disabled={!available}
-          className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
-            available
-              ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5'
-              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-          }`}
-        >
-          {available ? (
-            <>
-              Registrarse
-              <ExternalLink className="w-4 h-4" />
-            </>
-          ) : (
-            'No disponible'
-          )}
-        </button>
-      </div>
+  <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+
+  <p className="text-sm text-blue-600  mb-2 font-medium">{partner}</p>
+
+  <p className="text-sm text-gray-500 mb-2 flex items-center gap-1">
+  {location}
+  </p>
+
+  <p className="text-gray-600 mb-4">{description}</p>
+
+  <button
+    onClick={() => {
+      if (available && registrationUrl !== '#') {
+        window.open(registrationUrl, '_blank');
+      }
+    }}
+    disabled={!available}
+    className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
+      available
+        ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5'
+        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+    }`}
+  >
+    {available ? (
+      <>
+        Registrarse
+        <ExternalLink className="w-4 h-4" />
+      </>
+    ) : (
+      'No disponible'
+    )}
+  </button>
+</div>
     </motion.div>
   );
 }
