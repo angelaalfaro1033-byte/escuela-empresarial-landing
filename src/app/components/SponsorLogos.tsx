@@ -12,6 +12,7 @@ import Amore from '../../assets/images/amore.png';
 import TresCastillos from '../../assets/images/3castillos.png';
 import Honda from '../../assets/images/honda.png';
 import Sempertex from '../../assets/images/Sempertex.png';
+import DrakionTech from '../../assets/images/drakion.png';
 
 
 export function SponsorLogos() {
@@ -56,6 +57,11 @@ export function SponsorLogos() {
       image: Sempertex,
       category: 'Diseño',
     },
+    {
+      name: 'DrakionTech',
+      image: DrakionTech,
+      category: 'Tecnología',
+    },
   ];
 
   const settings = {
@@ -67,12 +73,15 @@ export function SponsorLogos() {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    arrows: true,
+    centerMode: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
       {
@@ -80,20 +89,26 @@ export function SponsorLogos() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: false,
+          dots: true,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+          centerMode: true,
+          centerPadding: '20px',
         },
       },
     ],
   };
 
   return (
-    <section className="bg-gray-50 py-16 px-6">
+    <section id="aliados" className="bg-gray-50 py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Organiza Section */}
         <motion.div
@@ -113,7 +128,7 @@ export function SponsorLogos() {
     alt="Logo Escuela Empresarial"
     className="w-44 h-44 object-contain"
   />
-</div>
+                </div>
 <p className="text-xl font-bold text-gray-800 mt-4">Camara de comercio</p>
               </div>
             </div>
@@ -131,14 +146,14 @@ export function SponsorLogos() {
             Nuestros Aliados Estratégicos
           </h2>
 
-          <div className="px-8">
+          <div className="px-2 sm:px-4 md:px-8">
             <Slider {...settings}>
               {sponsors.map((sponsor, index) => (
                 <div key={index} className="px-2">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-64"
+                    className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-64 mx-auto max-w-sm"
                   >
                     <div className="h-48 overflow-hidden">
                       <img
