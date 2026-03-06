@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import heroImg from "../../assets/images/hero.jpg";
+import heroImg from "../../assets/images/herox.jpg";
 import logoImg from "../../assets/images/logo.png";
 
 export function Header() {
   return (
     <header className="relative h-[80vh] min-h-[500px] text-white overflow-hidden">
       
-      {/* Imagen de fondo optimizada */}
+      {/* Imagen de fondo */}
       <img
         src={heroImg}
         alt="Hero Escuela Empresarial"

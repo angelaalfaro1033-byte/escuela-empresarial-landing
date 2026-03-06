@@ -6,13 +6,12 @@ import { motion } from 'motion/react';
 import { AboutSection } from './components/AboutSection';
 import { StatsSection } from './components/StatsSection';
 import nailImg from "../assets/images/Unas.jpg";
-import colorimetriaImg from "./assets/images/colorimetria.jpg";
-import barberiaImg from "../assets/images/barberia.jpg";
-import barismoImg from "../assets/images/barismo.jpg";
-import chocolateImg from "../assets/images/chocolate.jpg";
-import panaderiaImg from "../assets/images/panaderia.jpeg";
-import motosImg from "../assets/images/motos.JPG";
-import decoracionImg from "../assets/images/manualidades.jpg";
+import barberiaImg from "../assets/images/barberiax.jpg";
+import barismoImg from "../assets/images/barismox.jpg";
+import chocolateImg from "../assets/images/chocolatex.jpg";
+import panaderiaImg from "../assets/images/panaderiax.jpeg";
+import motosImg from "../assets/images/motosx.JPG";
+import decoracionImg from "../assets/images/manualidadesx.jpg";
 import { useEffect, useState } from "react";
 
 interface Course {
@@ -153,9 +152,10 @@ export default function App() {
     <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <Header />
       <AboutSection />
+      <StatsSection />
   
       {/* Courses Section */}
-      <section id="cursos" className="py-16 px-6">
+      <section id="cursos" className="py-6 px-6">
         <div className="max-w-7xl mx-auto">
           {courseCategories.map((categoryData, categoryIndex) => (
             <div key={categoryData.category} className="mb-16">
@@ -208,7 +208,6 @@ export default function App() {
       </section>
   
       <SponsorLogos />
-      <StatsSection />
       <Footer />
     </div>
   );
