@@ -43,12 +43,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a 
-                  href="#impacto" 
                   className="hover:text-blue-400 transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('impacto')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
                 >
                   Nuestro Impacto
                 </a>

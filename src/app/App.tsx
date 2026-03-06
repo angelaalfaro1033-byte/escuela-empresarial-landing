@@ -26,6 +26,7 @@ interface Course {
 }
 
 interface CourseCategory {
+  id: string;
   category: string;
   courses: Course[];
   color: string;
@@ -36,6 +37,7 @@ export default function App() {
     {
       category: 'E.E. BELLEZA',
       color: '#d946ef', 
+      id: 'belleza',
       courses: [
         {
           id: 'nail-design',
@@ -82,6 +84,7 @@ export default function App() {
     {
       category: 'E.E. GASTRONOMÍA',
       color: '#92400e',
+      id: 'gastronomia',
       courses: [
         {
           id: 'barista',
@@ -118,6 +121,7 @@ export default function App() {
     {
       category: 'E.E. AUTOPARTES',
       color: '#6b7280',
+      id: 'autopartes',
       courses: [
         {
           id: 'motorcycle',
@@ -133,6 +137,7 @@ export default function App() {
     {
       category: 'E.E. DISEÑO – MANUALIDADES',
       color: '#7c3aed',
+      id: 'diseno',
       courses: [
         {
           id: 'decoration',
@@ -158,7 +163,7 @@ export default function App() {
       <section id="cursos" className="py-6 px-6">
         <div className="max-w-7xl mx-auto">
           {courseCategories.map((categoryData, categoryIndex) => (
-            <div key={categoryData.category} className="mb-16">
+           <div key={categoryData.id} id={categoryData.id} className="mb-16">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
