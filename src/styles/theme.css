@@ -178,4 +178,45 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+
+  /* Slick Carousel Custom Styles */
+  .slick-slide {
+    padding: 0 10px;
+  }
+
+  .slick-list {
+    margin: 0 -10px;
+  }
+
+  .slick-dots {
+    bottom: -40px;
+  }
+
+  .slick-dots li button:before {
+    color: #2563eb;
+    font-size: 10px;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: #1d4ed8;
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+  }
+
+  .slick-prev {
+    left: -35px;
+  }
+
+  .slick-next {
+    right: -35px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: #2563eb;
+    font-size: 30px;
+  }
 }
