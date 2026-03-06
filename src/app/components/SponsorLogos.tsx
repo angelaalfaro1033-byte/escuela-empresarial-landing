@@ -12,7 +12,7 @@ import TresCastillos from '../../assets/images/3castillos.png';
 import Honda from '../../assets/images/honda.png';
 import Sempertex from '../../assets/images/Sempertex.png';
 import DrakionTech from '../../assets/images/drakion.png';
-import Pastel from "../assets/images/pastel.png";
+import Pastel from "../../assets/images/pastel.png";
 
 export function SponsorLogos() {
   const sponsors = [
