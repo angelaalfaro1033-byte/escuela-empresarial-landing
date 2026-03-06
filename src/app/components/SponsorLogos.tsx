@@ -8,12 +8,11 @@ import Masglo from '../../assets/images/masglo.png';
 import Alfaparf from '../../assets/images/Alfaparf.png';
 import Funse from '../../assets/images/funse.png';
 import Amore from '../../assets/images/amore.png';
-// import Pastel from '../../assets/images/logoempresa.png';
 import TresCastillos from '../../assets/images/3castillos.png';
 import Honda from '../../assets/images/honda.png';
 import Sempertex from '../../assets/images/Sempertex.png';
 import DrakionTech from '../../assets/images/drakion.png';
-
+import Pastel from "../assets/images/pastel.png";
 
 export function SponsorLogos() {
   const sponsors = [
@@ -39,7 +38,7 @@ export function SponsorLogos() {
     },
     {
       name: 'Mi Dulce Pastel',
-      image: 'https://images.unsplash.com/photo-1766852566000-1ffb8930c155?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBkZXNzZXJ0JTIwcGFzdHJ5JTIwc2hvcHxlbnwxfHx8fDE3NzI4MTQyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: Pastel,
       category: 'Gastronomía',
     },
     {
@@ -123,13 +122,13 @@ export function SponsorLogos() {
               {/* Placeholder para el logo - el usuario puede reemplazarlo */}
               <div className="flex flex-col items-center gap-4">
               <div className="flex justify-center">
-  <img
-    src={logoEmpresa}
-    alt="Logo Escuela Empresarial"
-    className="w-44 h-44 object-contain"
-  />
+                <img
+                  src={logoEmpresa}
+                  alt="Logo Escuela Empresarial"
+                  className="w-44 h-44 object-contain"
+                />
                 </div>
-<p className="text-xl font-bold text-gray-800 mt-4">Camara de comercio</p>
+                  <p className="text-xl font-bold text-gray-800 mt-4">Camara de comercio</p>
               </div>
             </div>
           </div>
