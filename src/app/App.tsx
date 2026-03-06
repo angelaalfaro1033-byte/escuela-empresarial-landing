@@ -4,6 +4,7 @@ import { SponsorLogos } from './components/SponsorLogos';
 import { Footer } from './components/Footer';
 import { motion } from 'motion/react';
 import { AboutSection } from './components/AboutSection';
+import { StatsSection } from './components/StatsSection';
 import nailImg from "../assets/images/Uñas.jpg";
 import colorimetriaImg from "./assets/images/colorimetria.jpg";
 import barberiaImg from "../assets/images/barberia.jpg";
@@ -207,6 +208,7 @@ export default function App() {
       </section>
   
       <SponsorLogos />
+      <StatsSection />
       <Footer />
     </div>
   );
