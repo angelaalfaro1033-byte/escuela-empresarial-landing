@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import aboutImg from "../../assets/images/aboutsection.jpg"; // usa cualquier imagen que tengas
+import aboutImg from "../../assets/images/aboutsection.jpg"; 
 
 export function AboutSection() {
   return (

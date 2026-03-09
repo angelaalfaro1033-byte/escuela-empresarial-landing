@@ -74,12 +74,15 @@ export function SponsorLogos() {
     pauseOnHover: true,
     arrows: true,
     centerMode: false,
+    adaptiveHeight: false,
+    variableWidth: false,
   
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 1,
           arrows: true
         }
       },
@@ -87,6 +90,7 @@ export function SponsorLogos() {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
           arrows: false,
           dots: true
         }
@@ -95,6 +99,7 @@ export function SponsorLogos() {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
           arrows: false,
           dots: true
         }
@@ -103,6 +108,7 @@ export function SponsorLogos() {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
           arrows: false,
           dots: true
         }
@@ -116,7 +122,7 @@ export function SponsorLogos() {
       <div className="max-w-7xl mx-auto">
   
   ```
-    {/* Organiza Section */}
+    {/* Organiza */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -128,28 +134,23 @@ export function SponsorLogos() {
       </h3>
   
       <div className="flex justify-center">
-        <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 inline-block">
+        <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
           <div className="flex flex-col items-center gap-4">
+            <img
+              src={logoEmpresa}
+              alt="Logo Escuela Empresarial"
+              className="w-44 h-44 object-contain"
+            />
   
-            <div className="flex justify-center">
-              <img
-                src={logoEmpresa}
-                alt="Logo Escuela Empresarial"
-                className="w-44 h-44 object-contain"
-              />
-            </div>
-  
-            <p className="text-xl font-bold text-gray-800 mt-4">
+            <p className="text-xl font-bold text-gray-800">
               Camara de comercio
             </p>
-  
           </div>
         </div>
       </div>
     </motion.div>
   
-  
-    {/* Carousel Section */}
+    {/* Carrusel */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -160,23 +161,20 @@ export function SponsorLogos() {
         Nuestros Aliados Estratégicos
       </h2>
   
-      <div className="px-2 sm:px-4 md:px-8 w-full overflow-hidden">
+      <div className="w-full overflow-hidden">
+  
         <Slider {...settings}>
-  
           {sponsors.map((sponsor, index) => (
-            <div key={index} className="px-2 w-full">
+            
+            <div key={index} className="px-3">
   
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-64 w-full"
-              >
+              <div className="bg-white rounded-xl shadow-md overflow-hidden h-64 w-full">
   
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 flex items-center justify-center p-4">
                   <img
                     src={sponsor.image}
                     alt={sponsor.name}
-                    className="w-full h-full object-cover"
+                    className="max-h-full object-contain"
                   />
                 </div>
   
@@ -190,17 +188,17 @@ export function SponsorLogos() {
                   </p>
                 </div>
   
-              </motion.div>
+              </div>
   
             </div>
-          ))}
   
+          ))}
         </Slider>
+  
       </div>
     </motion.div>
   
-  
-    {/* Info text */}
+    {/* Texto */}
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -212,10 +210,8 @@ export function SponsorLogos() {
         Trabajamos con las mejores marcas para ofrecerte la mejor capacitación
       </p>
     </motion.div>
-  
   </div>
-  ```
-  
     </section>
   );
+  
 }
