@@ -74,36 +74,40 @@ export function SponsorLogos() {
     pauseOnHover: true,
     arrows: true,
     centerMode: false,
+  
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          arrows: true,
-        },
+          arrows: true
+        }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
           arrows: false,
-          dots: true,
-        },
+          dots: true
+        }
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
           arrows: false,
-          dots: true,
-          centerMode: true,
-          centerPadding: '20px',
-        },
+          dots: true
+        }
       },
-    ],
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true
+        }
+      }
+    ]
   };
 
   return (
@@ -148,7 +152,7 @@ export function SponsorLogos() {
           <div className="px-2 sm:px-4 md:px-8">
             <Slider {...settings}>
               {sponsors.map((sponsor, index) => (
-                <div key={index} className="px-2">
+                <div key={index} className="px-2 w-full">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
