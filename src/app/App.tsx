@@ -12,6 +12,7 @@ import chocolateImg from "../assets/images/chocolatex.jpg";
 import panaderiaImg from "../assets/images/panaderiax.jpeg";
 import motosImg from "../assets/images/motosx.JPG";
 import decoracionImg from "../assets/images/manualidadesx.jpg";
+import Pastel from "../assets/images/pastel.png";
 import { useEffect, useState } from "react";
 
 interface Course {
