@@ -21,7 +21,7 @@ interface Course {
   description: string;
   image: string;
   partner: string;
-  location: string;
+  schedules: Schedule[];
   available: boolean;
   registrationUrl?: string;
 }
@@ -32,6 +32,13 @@ interface CourseCategory {
   courses: Course[];
   color: string;
 }
+
+type Schedule = {
+  city: 'Ibagué' | 'Neiva';
+  days: string;
+  time: string;
+  dates: string;
+};
 
 export default function App() {
   const courseCategories: CourseCategory[] = [
@@ -44,10 +51,23 @@ export default function App() {
           id: 'nail-design',
           title: 'Diseño de Uñas',
           description: 'Aprende las técnicas más modernas de nail art y diseño profesional de uñas con productos de alta calidad.',
-          image: nailImg,
+          image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
           partner: 'Masglo',
-          location: 'Ibagué-Tolima',
           available: true,
+          schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Mar – Mié',
+      time: '8 AM – 1 PM',
+      dates: '14,15,28,29 Abr · 12,13 May'
+    },
+    {
+      city: 'Neiva',
+      days: 'Mar – Mié',
+      time: '8 AM – 1 PM',
+      dates: '21,22 Abr · 6,7,19,20 May'
+    }
+  ],
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
         {
@@ -56,8 +76,21 @@ export default function App() {
           description: 'Domina las técnicas profesionales de maquillaje para todo tipo de eventos y ocasiones especiales.',
           image: 'https://images.unsplash.com/photo-1612883695890-f2ab22e65215?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',          
           partner: 'Masglo',
-          location: 'Ibagué-Tolima',
           available: true,
+           schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Mar – Mié',
+      time: '2 PM – 5 PM',
+      dates: '14,15,28,29 Abr · 12,13 May'
+    },
+    {
+      city: 'Neiva',
+      days: 'Mar – Mié',
+      time: '2 PM – 5 PM',
+      dates: '21,22 Abr · 6,7,19,20 May'
+    }
+  ],
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
         {
@@ -66,20 +99,46 @@ export default function App() {
           description: 'Conviértete en experto en teoría del color y técnicas avanzadas de coloración capilar profesional.',
           image: 'https://images.unsplash.com/photo-1617391654484-2894196c2cc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYWlyJTIwc2Fsb24lMjBjb2xvciUyMHRyZWF0bWVudHxlbnwxfHx8fDE3NzI0NzU3OTF8MA&ixlib=rb-4.1.0&q=80&w=1080',
           partner: 'Alfaparf',
-          location: 'Ibagué-Tolima',
           available: true,
+          schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Lun – Mar',
+      time: '8 AM – 3 PM',
+      dates: '27,28,29 Abr · 12,13,14 May'
+    },
+    {
+      city: 'Neiva',
+      days: 'Lun – Mar',
+      time: '8 AM – 3 PM',
+      dates: '14,15 Abr · 6,7,8 May'
+    }
+  ],
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
-        {
-          id: 'barbershop',
-          title: 'Barbería',
-          description: 'Aprende todas las técnicas de corte clásico y moderno, afeitado profesional y diseño de barba.',
-          image: barberiaImg ,
-          location: 'Ibagué-Tolima',
-          partner: 'Funse',
-          available: true,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-        },
+       {
+  id: 'barbershop',
+  title: 'Barbería',
+  description: 'Aprende todas las técnicas de corte clásico y moderno, afeitado profesional y diseño de barba.',
+  image: barberiaImg,
+  partner: 'Funse',
+  available: true,
+  schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Mar',
+      time: '8 AM – 12 PM',
+      dates: '14,21,28 Abr · 5,12,19 May'
+    },
+    {
+      city: 'Neiva',
+      days: 'Mar',
+      time: '8 AM – 12 PM',
+      dates: '14,21,28 Abr · 5,12,19 May'
+    }
+  ],
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+}
       ],
     },
     {
@@ -93,28 +152,67 @@ export default function App() {
           description: 'Descubre el arte del café: desde la selección del grano hasta el latte art más sofisticado.',
           image: barismoImg ,
           partner: 'Amore e Caffé',
-          location: 'Ibagué-Tolima',
           available: true,
+           schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Sábados',
+      time: '8–12 / 2–5 PM',
+      dates: '11,25 Abr · 9 May'
+    },
+    {
+      city: 'Neiva',
+      days: 'Sábados',
+      time: '8–12 / 2–5 PM',
+      dates: '18 Abr · 2 May · 16 May'
+    }
+  ],
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
         {
-          id: 'chocolate',
-          title: 'Chocolatería',
-          description: 'Crea deliciosas obras maestras de chocolate y aprende técnicas de tempering y decoración.',
-          image: chocolateImg ,
-          partner: 'Mi Dulce Pastel',
-          location: 'Ibagué-Tolima',
-          available: true,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-        },
+  id: 'chocolate',
+  title: 'Chocolatería',
+  description: 'Crea deliciosas obras maestras de chocolate y aprende técnicas de tempering y decoración.',
+  image: chocolateImg,
+  partner: 'Mi Dulce Pastel',
+  available: true,
+  schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Mar',
+      time: '2 PM – 5:30 PM',
+      dates: '14,21,28 Abr · 5,12,19 May'
+    },
+    {
+      city: 'Neiva',
+      days: 'Mar',
+      time: '2 PM – 5:30 PM',
+      dates: '14,21,28 Abr · 5,12,19 May'
+    }
+  ],
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+},
         {
           id: 'bakery',
           title: 'Panadería Artesanal',
           description: 'Domina las técnicas de panadería tradicional y moderna para crear panes de la más alta calidad.',
           image: panaderiaImg,
           partner: 'Tres Castillos',
-          location: 'Ibagué-Tolima',
           available: true,
+          schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Por confirmar',
+      time: '',
+      dates: ''
+    },
+    {
+      city: 'Neiva',
+      days: 'Por confirmar',
+      time: '',
+      dates: ''
+    }
+  ],
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
       ],
@@ -129,8 +227,8 @@ export default function App() {
           title: 'Mantenimiento de Motos',
           description: 'Curso exclusivo para miembros de las Fuerzas Militares. Aprende el mantenimiento integral de motocicletas.',
           image: motosImg,
+          schedules:[],
           partner: 'Honda Motos - Curso exclusivo FFMM',
-          location: 'Ibagué-Tolima',
           available: false,
         },
       ],
@@ -141,15 +239,28 @@ export default function App() {
       id: 'diseno',
       courses: [
         {
-          id: 'decoration',
-          title: 'Decoración Comercial con Globos y Arreglos Florales',
-          description: 'Aprende a crear impresionantes decoraciones para eventos con globos y arreglos florales profesionales.',
-          image: decoracionImg,
-          partner: 'Sempertex - Funse',
-          location: 'Ibagué-Tolima',
-          available: true,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-        },
+  id: 'decoration',
+  title: 'Decoración Comercial con Globos y Arreglos Florales',
+  description: 'Aprende a crear impresionantes decoraciones para eventos con globos y arreglos florales profesionales.',
+  image: decoracionImg,
+  partner: 'Sempertex - Funse',
+  available: true,
+  schedules: [
+    {
+      city: 'Ibagué',
+      days: 'Jueves',
+      time: '8 AM – 12 PM',
+      dates: '16,23,30 Abr · 7,14,21 May'
+    },
+    {
+      city: 'Neiva',
+      days: 'Jueves',
+      time: '8 AM – 12 PM',
+      dates: '16,23,30 Abr · 7,14,21 May'
+    }
+  ],
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+},
       ],
     },
   ];
@@ -197,12 +308,11 @@ export default function App() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {categoryData.courses.map((course) => (
                   <CourseCard
-                    key={course.id}
                     title={course.title}
                     description={course.description}
                     image={course.image}
                     partner={course.partner}
-                    location={course.location}
+                    schedules={course.schedules}
                     available={course.available}
                     registrationUrl={course.registrationUrl}
                   />

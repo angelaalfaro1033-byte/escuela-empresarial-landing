@@ -6,6 +6,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import logoEmpresa from '../../assets/images/logocamara.png';
 import logoBogota from '../../assets/images/bogota.png';
 import logoHuila from '../../assets/images/huila.png';
+import logoUT from '../../assets/images/universiadTolima.png';
+import logoUniminuto from '../../assets/images/uniminuto.png';
+import logoGonernacionTolima from '../../assets/images/gobernacion.png';
 import Masglo from '../../assets/images/masglo.png';
 import Alfaparf from '../../assets/images/Alfaparf.png';
 import Funse from '../../assets/images/funse.png';
@@ -238,6 +241,64 @@ className="text-center mb-12"
   ))}
 </div>
         </motion.div>
+         <motion.div
+initial={{ opacity: 0, y: 20 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ once: true }}
+className="text-center mb-12"
+
+>
+
+  <h3 className="text-3xl md:text-4xl font-bold text-center mt-15 mb-8 text-gray-800">
+    Colaboración Especial
+  </h3>
+
+  <div className="flex flex-wrap justify-center gap-8">
+
+{/* Recuadro 1 */}
+<div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+  <div className="flex flex-col items-center gap-4">
+    <img
+      src={logoUT}
+      alt="Logo UT"
+      className="w-40 h-40 object-contain"
+    />
+    <p className="text-xl font-bold text-gray-800">
+   Universidad Tolima
+    </p>
+  </div>
+</div>
+
+{/* Recuadro 2 */}
+<div className="bg-white rounded-2xl shadow-lg p-3 hover:shadow-2xl transition-shadow duration-300 w-72">
+  <div className="flex flex-col items-center gap-2">
+    <img
+      src={logoUniminuto}
+      alt="Logo UNIMINUTO"
+      className="w-full h-48 object-contain"
+    />
+    <p className="text-xl font-bold text-gray-800 text-center">
+      Universidad UNIMINUTO Centro Sur
+    </p>
+  </div>
+</div>
+
+{/* Recuadro 3 */}
+<div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+  <div className="flex flex-col items-center gap-4">
+    <img
+      src={logoGonernacionTolima}
+      alt="Logo  Gobernación del Tolima"
+      className="w-40 h-40 object-contain"
+    />
+    <p className="text-xl font-bold text-gray-800">
+   Gobernación del Tolima
+    </p>
+  </div>
+</div>
+
+  </div>
+</motion.div>
 
         {/* Info text */}
         <motion.div

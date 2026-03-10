@@ -187,7 +187,7 @@ export function StatsSection() {
         >
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 px-6 py-3 rounded-full font-medium shadow-md">
             <TrendingUp className="w-5 h-5 text-green-600" />
-            <span>¡Más de 500 profesionales capacitados en los últimos 2 años!</span>
+            <span>¡Más de 500 emprendedores capacitados en los últimos 2 años!</span>
           </div>
         </motion.div>
       </div>
