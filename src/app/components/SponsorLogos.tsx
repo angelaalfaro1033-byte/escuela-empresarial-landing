@@ -130,7 +130,6 @@ className="text-center mb-12"
 
   <div className="flex flex-wrap justify-center gap-8">
 
-```
 {/* Recuadro 1 */}
 <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
   <div className="flex flex-col items-center gap-4">
@@ -172,12 +171,9 @@ className="text-center mb-12"
     </p>
   </div>
 </div>
-```
 
   </div>
 </motion.div>
-
-
         {/* Carousel Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -188,32 +184,59 @@ className="text-center mb-12"
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
             Apoyan
           </h2>
-
-          <div className="px-2 sm:px-4 md:px-8">
-            <Slider {...settings}>
-              {sponsors.map((sponsor, index) => (
-                <div key={index} className="px-2 w-full">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-64 mx-auto max-w-sm"
-                  >
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={sponsor.image}
-                        alt={sponsor.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-4 text-center">
-                      <h3 className="font-bold text-lg text-gray-800">{sponsor.name}</h3>
-                      <p className="text-sm text-blue-600">{sponsor.category}</p>
-                    </div>
-                  </motion.div>
-                </div>
-              ))}
-            </Slider>
+{/* Carrusel solo en pantallas medianas o grandes */}
+<div className="hidden md:block px-2 sm:px-4 md:px-8">
+  <Slider {...settings}>
+    {sponsors.map((sponsor, index) => (
+      <div key={index} className="px-2 w-full">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+          className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-64 mx-auto max-w-sm"
+        >
+          <div className="h-48 overflow-hidden">
+            <img
+              src={sponsor.image}
+              alt={sponsor.name}
+              className="w-full h-full object-cover"
+            />
           </div>
+          <div className="p-4 text-center">
+            <h3 className="font-bold text-lg text-gray-800">
+              {sponsor.name}
+            </h3>
+            <p className="text-sm text-blue-600">
+              {sponsor.category}
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    ))}
+  </Slider>
+</div>
+{/* Grid para móvil */}
+{/* Grid para móvil con imágenes más pequeñas */}
+<div className="grid grid-cols-2 gap-3 md:hidden px-2">
+  {sponsors.map((sponsor, index) => (
+    <div key={index}>
+      <div className="bg-white rounded-xl shadow-md overflow-hidden h-40">
+        <div className="h-28 overflow-hidden">
+          <img
+            src={sponsor.image}
+            alt={sponsor.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-2 text-center">
+          <h3 className="font-semibold text-sm text-gray-800">
+            {sponsor.name}
+          </h3>
+          <p className="text-xs text-blue-600">{sponsor.category}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
         </motion.div>
 
         {/* Info text */}
