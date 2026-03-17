@@ -18,6 +18,8 @@ import Honda from '../../assets/images/honda.png';
 import Sempertex from '../../assets/images/Sempertex.png';
 import DrakionTech from '../../assets/images/drakion.png';
 import Pastel from "../../assets/images/pastel.png";
+import Dhamaile from '../../assets/images/Dhamaile.png';
+import Cauchera from "../../assets/images/confederacionCauchera.png";
 
 export function SponsorLogos() {
   const sponsors = [
@@ -65,6 +67,16 @@ export function SponsorLogos() {
       name: 'DrakionTech',
       image: DrakionTech,
       category: 'Tecnología',
+    },
+    {
+      name: 'Dhamaile Chocolateria',
+      image: Dhamaile,
+      category: 'Gastronomía',
+    },
+    {
+      name: 'Confederación Cauchera',
+      image: Cauchera,
+      category: 'agroindustrial',
     },
   ];
 
