@@ -105,28 +105,28 @@ export function CourseCard({
             {description}
           </p>
 
-          <button
-            onClick={() => {
-              if (available && registrationUrl !== "#") {
-                window.open(registrationUrl, "_blank")
-              }
-            }}
-            disabled={!available}
-            className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
-              available
-                ? "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-            }`}
-          >
-            {available ? (
-              <>
-                Registrarse
-                <ExternalLink className="w-4 h-4" />
-              </>
-            ) : (
-              "No disponible"
-            )}
-          </button>
+<button
+  onClick={() => {
+    if (available && registrationUrl !== "#") {
+      window.open(registrationUrl, "_blank")
+    }
+  }}
+  disabled={!available}
+  className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
+    available
+      ? "bg-[#D94EE6] text-white hover:bg-[#c13bcc] hover:shadow-lg hover:-translate-y-0.5"
+      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+  }`}
+>
+  {available ? (
+    <>
+      Registrarse
+      <ExternalLink className="w-4 h-4" />
+    </>
+  ) : (
+    "No disponible"
+  )}
+</button>
         </div>
       </motion.div>
 

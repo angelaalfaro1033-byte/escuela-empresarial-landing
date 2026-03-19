@@ -8,9 +8,10 @@ interface StatCardProps {
   delay?: number;
   icon?: React.ReactNode;
   highlight?: boolean;
+   hoverColor: string;
 }
 
-function StatCard({ value, label, delay = 0, icon, highlight = false }: StatCardProps) {
+function StatCard({ value, label, delay = 0, icon, highlight = false, hoverColor }: StatCardProps) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -37,26 +38,21 @@ function StatCard({ value, label, delay = 0, icon, highlight = false }: StatCard
 
   return (
     <motion.div
-      ref={ref}
+    ref={ref}
       initial={{ opacity: 0, y: 50, scale: 0.8 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className={`relative overflow-hidden rounded-2xl p-8 ${
-        highlight
-          ? 'bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white shadow-2xl'
-          : 'bg-white text-gray-800 shadow-lg'
-      } hover:shadow-2xl transition-shadow duration-300`}
+      className={`group relative overflow-hidden rounded-2xl p-8 bg-white text-gray-800 shadow-lg 
+        hover:shadow-2xl transition-all duration-300`}
     >
       {/* Decorative background */}
-      <div className="absolute top-0 right-0 opacity-10">
-        <div className="w-32 h-32 bg-white rounded-full blur-2xl"></div>
-      </div>
+       <div
+        className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 ${hoverColor}`}
+      ></div>
       
-      <div className="relative">
-        {icon && (
-          <div className={`mb-4 ${highlight ? 'text-blue-200' : 'text-blue-600'}`}>
-            {icon}
+<div className="relative z-10 transition-all duration-300 group-hover:text-white">        {icon && (
+<div className="mb-4 transition-all duration-300 group-hover:text-white">            {icon}
           </div>
         )}
         
@@ -64,8 +60,7 @@ function StatCard({ value, label, delay = 0, icon, highlight = false }: StatCard
           {count.toLocaleString()}
         </div>
         
-        <div className={`text-lg font-medium ${highlight ? 'text-blue-100' : 'text-gray-600'}`}>
-          {label}
+<div className="mb-4 transition-all duration-300 group-hover:text-white">             {label}
         </div>
       </div>
     </motion.div>
@@ -154,26 +149,30 @@ export function StatsSection() {
 
         {/* Main Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <StatCard
+<StatCard
             value={totalGraduates}
             label="Total Graduados"
             delay={0.1}
             icon={<Award className="w-12 h-12" />}
-            highlight={true}
+            hoverColor="bg-[#006AFF]" // 👈 azul 1
           />
-          
+
+          {/* Fucsia */}
           <StatCard
             value={371}
             label="Graduados 2024"
             delay={0.2}
             icon={<Users className="w-12 h-12" />}
+            hoverColor="bg-[#D94EE6]" // 👈 fucsia
           />
-          
+
+          {/* Blue 2 */}
           <StatCard
             value={216}
             label="Graduados 2025"
             delay={0.3}
             icon={<Calendar className="w-12 h-12" />}
+            hoverColor="bg-[#0047CC]" // 👈 azul 2
           />
         </div>   
 
@@ -185,10 +184,6 @@ export function StatsSection() {
           transition={{ delay: 1.2 }}
           className="mt-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 px-6 py-3 rounded-full font-medium shadow-md">
-            <TrendingUp className="w-5 h-5 text-green-600" />
-            <span>¡Más de 500 emprendedores capacitados en los últimos 2 años!</span>
-          </div>
         </motion.div>
       </div>
     </section>

@@ -5,13 +5,9 @@ import { Footer } from './components/Footer';
 import { motion } from 'motion/react';
 import { AboutSection } from './components/AboutSection';
 import { StatsSection } from './components/StatsSection';
-import nailImg from "../assets/images/Unas.jpg";
-import barberiaImg from "../assets/images/barberiax.jpg";
 import barismoImg from "../assets/images/barismox.jpg";
 import chocolateImg from "../assets/images/chocolatex.jpg";
 import panaderiaImg from "../assets/images/panaderiax.jpeg";
-import motosImg from "../assets/images/motosx.JPG";
-import decoracionImg from "../assets/images/manualidadesx.jpg";
 import Pastel from "../assets/images/pastel.png";
 import { useEffect, useState } from "react";
 
@@ -66,7 +62,7 @@ day:"Miércoles",
 topic:"Inducción / Lanzamiento programa",
 time:"8:00 AM",
 classroom:"Auditorio Principal",
-partner:"CCI",
+partner:"Camara de comercio de Ibagué",
 city:"Ibagué"
 },
 
@@ -232,7 +228,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -242,7 +238,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Belleza)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -373,7 +369,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -403,7 +399,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Belleza)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -513,7 +509,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -523,7 +519,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Belleza)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -654,7 +650,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -664,7 +660,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Belleza)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -794,7 +790,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -834,7 +830,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Belleza)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -924,7 +920,7 @@ city:"Ibagué"
   id: 'barbershop',
   title: 'Barbería',
   description: 'Aprende todas las técnicas de corte clásico y moderno, afeitado profesional y diseño de barba.',
-  image: barberiaImg,
+  image: 'https://images.unsplash.com/photo-1547648946-2b1fd7eab923?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXIlMjBzaG9wJTIwY3V0dGluZyUyMGhhaXJ8ZW58MXx8fHwxNzcyNTgwMzE5fDA&ixlib=rb-4.1.0&q=80&w=1080',
   partner: 'Funse',
   available: true,
   sessions: [
@@ -935,7 +931,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -955,7 +951,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Belleza)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1102,7 +1098,7 @@ city:"Ibagué"
     day: "Sábado",
     topic: "Clase práctica 1: Conocimientos generales del café",
     time: "08:00 AM - 12:00 PM",
-    classroom: "Primer piso CCI - Amore e Caffè",
+    classroom: "Primer piso Camara de comercio de Ibagué - Amore e Caffè",
     partner: "C al Cubo",
     city: "Ibagué"
   },
@@ -1112,7 +1108,7 @@ city:"Ibagué"
     day: "Sábado",
     topic: "Clase práctica 2: Conocimientos generales del café II",
     time: "2:00 PM - 5:00 PM",
-    classroom: "Primer piso CCI - Amore e Caffè",
+    classroom: "Primer piso Camara de comercio de Ibagué - Amore e Caffè",
     partner: "C al Cubo",
     city: "Ibagué"
   },
@@ -1133,7 +1129,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Gastronomía)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1142,7 +1138,7 @@ city:"Ibagué"
     day: "Sábado",
     topic: "Clase práctica 3: Métodos de filtrado",
     time: "08:00 AM - 12:00 PM",
-    classroom: "Primer piso CCI - Amore e Caffè",
+    classroom: "Primer piso Camara de comercio de Ibagué - Amore e Caffè",
     partner: "C al Cubo",
     city: "Ibagué"
   },
@@ -1152,7 +1148,7 @@ city:"Ibagué"
     day: "Sábado",
     topic: "Clase práctica 4: Técnicas de preparación",
     time: "2:00 PM - 5:00 PM",
-    classroom: "Primer piso CCI - Amore e Caffè",
+    classroom: "Primer piso Camara de comercio de Ibagué - Amore e Caffè",
     partner: "C al Cubo",
     city: "Ibagué"
   },
@@ -1172,7 +1168,7 @@ city:"Ibagué"
     day: "Sábado",
     topic: "Clase práctica 5: Tipos de leche, texturización y preparación de bebidas lácteas",
     time: "08:00 AM - 12:00 PM",
-    classroom: "Primer piso CCI - Amore e Caffè",
+    classroom: "Primer piso Camara de comercio de Ibagué - Amore e Caffè",
     partner: "C al Cubo",
     city: "Ibagué"
   },
@@ -1182,7 +1178,7 @@ city:"Ibagué"
     day: "Sábado",
     topic: "Clase práctica 6: Refuerzo",
     time: "2:00 PM - 5:00 PM",
-    classroom: "Primer piso CCI - Amore e Caffè",
+    classroom: "Primer piso Camara de comercio de Ibagué - Amore e Caffè",
     partner: "C al Cubo",
     city: "Ibagué"
   },
@@ -1233,7 +1229,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -1273,7 +1269,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Gastronomía)",
     time: "8:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -1374,7 +1370,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1404,7 +1400,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Gastronomía)",
     time: "08:00 AM - 10:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1525,7 +1521,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1575,7 +1571,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Gastronomía)",
     time: "08:00 AM - 10:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1665,7 +1661,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -1675,7 +1671,7 @@ city:"Ibagué"
     topic: "Modelo de negocio Canvas",
     time: "01:00 PM - 05:00 PM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -1695,7 +1691,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Gastronomía)",
     time: "08:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -1745,7 +1741,7 @@ city:"Ibagué"
     topic: "Clase práctica 4: Chocolatería",
     time: "08:00 AM - 12:30 PM",
     classroom: "Cocina Universidad del Tolima",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -1802,8 +1798,7 @@ city:"Ibagué"
           id: 'motorcycle',
           title: 'Mantenimiento de Motos',
           description: 'Curso exclusivo para miembros de las Fuerzas Militares. Aprende el mantenimiento integral de motocicletas.',
-          image: motosImg,
-          sessions:[],
+image: 'https://images.unsplash.com/photo-1762604462465-76720d039e9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3RvcmN5Y2xlJTIwbWFpbnRlbmFuY2UlMjBtZWNoYW5pYyUyMHdvcmtzaG9wfGVufDF8fHx8MTc3MjU4MDMyMXww&ixlib=rb-4.1.0&q=80&w=1080',          sessions:[],
           partner: 'Honda Motos - Curso exclusivo FFMM',
           available: false,
         },
@@ -1818,8 +1813,7 @@ city:"Ibagué"
   id: 'decoration',
   title: 'Decoración Comercial con Globos y Arreglos Florales',
   description: 'Aprende a crear impresionantes decoraciones para eventos con globos y arreglos florales profesionales.',
-  image: decoracionImg,
-  partner: 'Sempertex - Funse',
+image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxsb29uJTIwZGVjb3JhdGlvbiUyMHBhcnR5JTIwZXZlbnR8ZW58MXx8fHwxNzcyNTgwMzIyfDA&ixlib=rb-4.1.0&q=80&w=1080',  partner: 'Sempertex - Funse',
   available: true,
   sessions: [
     {
@@ -1829,7 +1823,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1899,7 +1893,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Decoración)",
     time: "08:00 AM - 10:00 AM",
     classroom: "Auditorio principal",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Ibagué"
   },
   {
@@ -1959,7 +1953,7 @@ city:"Ibagué"
     topic: "Inducción / Lanzamiento programa",
     time: "09:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {
@@ -2029,7 +2023,7 @@ city:"Ibagué"
     topic: "Costos y formalización (Decoración)",
     time: "08:00 AM - 10:00 AM",
     classroom: "Salones UT",
-    partner: "CCI",
+    partner: "Camara de comercio de Ibagué",
     city: "Neiva"
   },
   {

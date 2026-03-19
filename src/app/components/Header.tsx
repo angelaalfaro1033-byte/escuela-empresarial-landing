@@ -30,16 +30,6 @@ export function Header() {
           className="w-48 md:w-64 lg:w-72 mb-6 object-contain"
         />
 
-        {/* Título */}
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold mb-4 tracking-tight"
-        >
-          ESCUELA EMPRESARIAL
-        </motion.h1>
-
         {/* Subtítulo */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
