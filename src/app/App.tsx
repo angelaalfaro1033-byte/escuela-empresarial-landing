@@ -10,6 +10,9 @@ import chocolateImg from "../assets/images/chocolatex.jpg";
 import panaderiaImg from "../assets/images/panaderiax.jpeg";
 import Pastel from "../assets/images/pastel.png";
 import { useEffect, useState } from "react";
+import {  BellezaBackground,  GastronomiaBackground,  AutopartesBackground,  DisenoBackground } from './components/CategoryBackgrounds';
+import { useActiveSection } from './hooks/useActiveSection';
+import { Sparkles } from 'lucide-react';
 
 interface Course {
   id: string
@@ -2083,67 +2086,162 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
     },
   ];
 
+ const activeSection = useActiveSection(['belleza', 'gastronomia', 'autopartes', 'diseno', 'impacto', 'aliados']);
+
+  const getSectionId = (category: string) => {
+    if (category === 'E.E. BELLEZA') return 'belleza';
+    if (category === 'E.E. GASTRONOMÍA') return 'gastronomia';
+    if (category === 'E.E. AUTOPARTES') return 'autopartes';
+    if (category === 'E.E. DISEÑO – MANUALIDADES') return 'diseno';
+    return '';
+  };
+
+  const getCategoryBackground = (category: string, isActive: boolean) => {
+    switch (category) {
+      case 'E.E. BELLEZA':
+        return <BellezaBackground isActive={isActive} />;
+      case 'E.E. GASTRONOMÍA':
+        return <GastronomiaBackground isActive={isActive} />;
+      case 'E.E. AUTOPARTES':
+        return <AutopartesBackground isActive={isActive} />;
+      case 'E.E. DISEÑO – MANUALIDADES':
+        return <DisenoBackground isActive={isActive} />;
+      default:
+        return null;
+    }
+  };
+
+  const getCategoryColor = (category: string, isActive: boolean) => {
+    const colors = {
+      'E.E. BELLEZA': isActive ? 'text-pink-600' : 'text-pink-700',
+      'E.E. GASTRONOMÍA': isActive ? 'text-orange-700' : 'text-orange-800',
+      'E.E. AUTOPARTES': isActive ? 'text-gray-700' : 'text-gray-800',
+      'E.E. DISEÑO – MANUALIDADES': isActive ? 'text-purple-600' : 'text-purple-700',
+    };
+    return colors[category as keyof typeof colors] || 'text-gray-800';
+  };
+
+  const getCategoryAccentColor = (category: string) => {
+    const colors = {
+      'E.E. BELLEZA': 'from-pink-600 via-pink-500 to-pink-400',
+      'E.E. GASTRONOMÍA': 'from-orange-700 via-orange-600 to-orange-500',
+      'E.E. AUTOPARTES': 'from-gray-600 via-gray-500 to-gray-400',
+      'E.E. DISEÑO – MANUALIDADES': 'from-purple-600 via-purple-500 to-purple-400',
+    };
+    return colors[category as keyof typeof colors] || 'from-blue-600 via-blue-500 to-blue-400';
+  };
+
+  const getCategoryBorderColor = (category: string) => {
+    const colors = {
+      'E.E. BELLEZA': 'from-pink-500 via-pink-600 to-pink-700',
+      'E.E. GASTRONOMÍA': 'from-orange-600 via-orange-700 to-orange-800',
+      'E.E. AUTOPARTES': 'from-gray-500 via-gray-600 to-gray-700',
+      'E.E. DISEÑO – MANUALIDADES': 'from-purple-500 via-purple-600 to-purple-700',
+    };
+    return colors[category as keyof typeof colors] || 'from-blue-500 via-blue-600 to-blue-700';
+  };
+
   return (
     <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <Header />
       <AboutSection />
       <StatsSection />
-  
+      
       {/* Courses Section */}
-      <section id="cursos" className="py-6 px-6">
+      <section id="cursos" className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          {courseCategories.map((categoryData, categoryIndex) => (
-           <div key={categoryData.id} id={categoryData.id} className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: categoryIndex * 0.1 }}
-                className="mb-8"
+          {courseCategories.map((categoryData, categoryIndex) => {
+            const sectionId = getSectionId(categoryData.category);
+            const isActive = activeSection === sectionId;
+
+            return (
+              <motion.div 
+                key={categoryData.category} 
+                id={sectionId}
+                className={`mb-16 transition-all duration-500 relative`}
+                animate={{
+                  scale: 1,
+                }}
+                transition={{ duration: 0.4 }}
               >
-                <div className="flex items-center gap-4 mb-2">
-                  <div
-                    className="h-1 w-12 rounded-full"
-                    style={{ backgroundColor: categoryData.color }}
-                  ></div>
-  
-                  <h2
-                    className="text-3xl md:text-4xl font-bold"
-                    style={{ color: categoryData.color }}
-                  >
-                    {categoryData.category}
-                  </h2>
+                {/* Category Background */}
+                {getCategoryBackground(categoryData.category, isActive)}
+
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: categoryIndex * 0.1 }}
+                  className={`mb-8 relative ${isActive ? 'pl-6' : ''} z-10`}
+                >
+                  <div className="flex items-center gap-4 mb-2 flex-wrap">
+                    <motion.div 
+                      className={`h-1 rounded-full transition-all duration-500 ${
+                        isActive 
+                          ? `w-20 bg-gradient-to-r ${getCategoryAccentColor(categoryData.category)}` 
+                          : `w-12 bg-gradient-to-r ${getCategoryAccentColor(categoryData.category)}`
+                      }`}
+                      animate={{
+                        boxShadow: isActive 
+                          ? ['0 0 10px rgba(147, 112, 219, 0.5)', '0 0 20px rgba(147, 112, 219, 0.8)', '0 0 10px rgba(147, 112, 219, 0.5)']
+                          : 'none'
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                    <h2 className={`text-3xl md:text-4xl font-bold transition-all duration-300 ${
+                      getCategoryColor(categoryData.category, isActive)
+                    } ${isActive ? 'drop-shadow-lg' : ''}`}>
+                      {categoryData.category}
+                    </h2>
+                    {isActive && (
+                      <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        className={`bg-gradient-to-r ${getCategoryBorderColor(categoryData.category)} text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg`}
+                      >
+                        Viendo ahora
+                      </motion.div>
+                    )}
+                  </div>
+                  <motion.div 
+                    className={`h-0.5 w-full rounded-full transition-all duration-500 bg-gradient-to-r ${
+                      isActive 
+                        ? getCategoryAccentColor(categoryData.category) + ' opacity-60' 
+                        : getCategoryAccentColor(categoryData.category) + ' opacity-20'
+                    }`}
+                    animate={{
+                      boxShadow: isActive 
+                        ? '0 2px 15px rgba(147, 112, 219, 0.4)'
+                        : 'none'
+                    }}
+                  />
+                </motion.div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+                  {categoryData.courses.map((course) => (
+                    <CourseCard
+                      key={course.id}
+                      title={course.title}
+                      description={course.description}
+                      image={course.image}
+                      partner={course.partner}
+                      available={course.available}
+                      registrationUrl={course.registrationUrl}
+                    />
+                  ))}
                 </div>
-  
-                <div
-                  className="h-0.5 w-full rounded-full"
-                  style={{
-                    background: `linear-gradient(to right, ${categoryData.color}55, transparent)`
-                  }}
-                ></div>
               </motion.div>
-  
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  {categoryData.courses.map((course, index) => (
-    <CourseCard
-      key={index}
-      title={course.title}
-      description={course.description}
-      image={course.image}
-      partner={course.partner}
-      sessions={course.sessions}
-      available={course.available}
-      registrationUrl={course.registrationUrl}
-       categoryColor={categoryData.color} 
-    />
-  ))}
-</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
-  
-      <SponsorLogos />
+            <SponsorLogos />
+      <StatsSection />
       <Footer />
     </div>
   );
