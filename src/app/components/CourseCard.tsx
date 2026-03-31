@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import { ExternalLink } from "lucide-react"
 import { useState } from "react"
+import { CourseModal } from "./CourseModal"
 
 interface Session {
   session: number
@@ -22,6 +23,7 @@ interface CourseCardProps {
   available: boolean
   registrationUrl?: string
   categoryColor?: string
+  category?: string
 }
 
 export function CourseCard({
@@ -33,6 +35,7 @@ export function CourseCard({
   available,
   registrationUrl = "#",
   categoryColor,
+  category = "Curso",
 }: CourseCardProps) {
 
   const previewSessions = (sessions ?? []).slice(0, 2)
@@ -46,7 +49,51 @@ export function CourseCard({
     (s) => s.city === "Neiva"
   )
 
-  const [open, setOpen] = useState(false)
+  const [openSchedule, setOpenSchedule] = useState(false)
+  const [openCourseModal, setOpenCourseModal] = useState(false)
+
+  // Colores por categoría para el modal
+  const getCategoryColors = () => {
+    const colorMap: { [key: string]: { primary: string; gradient: string; bg: string } } = {
+      'E.E. BELLEZA': {
+        primary: 'bg-pink-500',
+        gradient: 'bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700',
+        bg: '#FFC0CB'
+      },
+      'E.E. GASTRONOMÍA': {
+        primary: 'bg-amber-700',
+        gradient: 'bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900',
+        bg: '#A0522D'
+      },
+      'E.E. AUTOPARTES': {
+        primary: 'bg-gray-500',
+        gradient: 'bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700',
+        bg: '#B0B0B0'
+      },
+      'E.E. DISEÑO-MANUALIDADES': {
+        primary: 'bg-purple-500',
+        gradient: 'bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700',
+        bg: '#9370DB'
+      }
+    };
+    
+    return colorMap[category] || {
+      primary: 'bg-blue-500',
+      gradient: 'bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700',
+      bg: '#3B82F6'
+    };
+  };
+
+  // Imágenes de carrusel (4 imágenes de ejemplo)
+  const carouselImages = [
+    image, // Imagen principal del curso
+    'https://images.unsplash.com/photo-1767595666159-48794b9e9a7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBjb3Vyc2UlMjB0cmFpbmluZyUyMHN0dWRlbnRzfGVufDF8fHx8MTc3NDkwNjg2NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    'https://images.unsplash.com/photo-1759521296047-89338c8e083d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb29raW5nJTIwY2xhc3MlMjBjaGVmJTIwaW5zdHJ1Y3RvcnxlbnwxfHx8fDE3NzQ5MDY4NjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    'https://images.unsplash.com/photo-1763310225230-6e15b125935a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB3b3Jrc2hvcCUyMGNyZWF0aXZlJTIwY2xhc3N8ZW58MXx8fHwxNzc0OTA2ODY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+  ];
+
+  // Logo del partner
+  const partnerLogo = 'https://images.unsplash.com/photo-1765852549902-bd9c79d01afb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3NtZXRpY3MlMjBiZWF1dHklMjBwcm9kdWN0c3xlbnwxfHx8fDE3NzQ5MDY4NzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
 
   return (
     <>
@@ -58,7 +105,10 @@ export function CourseCard({
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
       >
-        <div className="relative h-48 overflow-hidden">
+        <div 
+          className="relative h-48 overflow-hidden cursor-pointer"
+          onClick={() => setOpenCourseModal(true)}
+        >
           <img
             src={image}
             alt={title}
@@ -92,7 +142,7 @@ export function CourseCard({
 
             {remainingSessions > 0 && (
               <button
-                onClick={() => setOpen(true)}
+                onClick={() => setOpenSchedule(true)}
                 className="font-medium hover:underline"
                 style={{ color: categoryColor }}
               >
@@ -130,8 +180,8 @@ export function CourseCard({
         </div>
       </motion.div>
 
-      {/* MODAL */}
-      {open && (
+      {/* MODAL DE CRONOGRAMA */}
+      {openSchedule && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
 
           <div className="bg-white rounded-xl p-6 w-full max-w-4xl max-h-[85vh] overflow-y-auto shadow-xl">
@@ -143,7 +193,7 @@ export function CourseCard({
               </h3>
 
               <button
-                onClick={() => setOpen(false)}
+                onClick={() => setOpenSchedule(false)}
                 className="text-gray-500 hover:text-black text-lg"
               >
                 ✕
@@ -240,6 +290,22 @@ export function CourseCard({
           </div>
         </div>
       )}
+
+      {/* MODAL DE CURSO CON CARRUSEL */}
+      <CourseModal
+        isOpen={openCourseModal}
+        onClose={() => setOpenCourseModal(false)}
+        course={{
+          title,
+          description,
+          image,
+          partner,
+          category
+        }}
+        categoryColor={getCategoryColors()}
+        carouselImages={carouselImages}
+        partnerLogo={partnerLogo}
+      />
     </>
   )
 }

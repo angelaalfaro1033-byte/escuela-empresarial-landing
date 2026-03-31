@@ -2229,8 +2229,11 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
                       title={course.title}
                       description={course.description}
                       image={course.image}
+                      sessions={course.sessions}
                       partner={course.partner}
                       available={course.available}
+                      categoryColor={categoryData.color}
+                      category={categoryData.category}
                       registrationUrl={course.registrationUrl}
                     />
                   ))}
