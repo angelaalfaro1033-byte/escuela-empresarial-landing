@@ -947,12 +947,12 @@ city:"Ibagué"
   }
   ],
         carouselImages: [
-    'https://url-imagen-1.jpg',
-    'https://url-imagen-2.jpg',
-    'https://url-imagen-3.jpg',
-    'https://url-imagen-4.jpg',
+    'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVsdXF1ZXJpYXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVsdXF1ZXJpYXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1614838000227-0c425248c33b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHBlbHVxdWVyaWF8ZW58MHx8MHx8fDA%3D',
+    'https://images.unsplash.com/photo-1648313143853-aa913f6ad44a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY1fHxwZWx1cXVlcmlhfGVufDB8fDB8fHww',
   ],
-   partnerLogo: 'https://url-logo-partner.jpg',
+   partnerLogo: Alfaparf,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
        {
@@ -1105,12 +1105,12 @@ city:"Ibagué"
   }
   ],
     carouselImages: [
-    'https://url-imagen-1.jpg',
-    'https://url-imagen-2.jpg',
-    'https://url-imagen-3.jpg',
-    'https://url-imagen-4.jpg',
+    'https://images.unsplash.com/photo-1654097801176-cb1795fd0c5e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxwZWx1cXVlcmlhfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1599234108550-cca636667571?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxwZWx1cXVlcmlhfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1574430558844-f534429680b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fHBlbHVxdWVyaWF8ZW58MHx8MHx8fDA%3D',
+    'https://images.unsplash.com/photo-1651923098148-1c39bfa23331?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA1fHxwZWx1cXVlcmlhfGVufDB8fDB8fHww',
   ],
-   partnerLogo: 'https://url-logo-partner.jpg',
+   partnerLogo: Funse,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
       ],
@@ -1400,12 +1400,12 @@ city:"Ibagué"
   }
   ],
          carouselImages: [
-    'https://url-imagen-1.jpg',
-    'https://url-imagen-2.jpg',
-    'https://url-imagen-3.jpg',
-    'https://url-imagen-4.jpg',
+    'https://images.unsplash.com/photo-1663141214785-4dad16507ea2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJhcmlzdGElMjBjb2ZmZWV8ZW58MHx8MHx8fDA%3D',
+    'https://images.unsplash.com/photo-1615817109471-1069816cabfa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyaXN0YSUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1507915135761-41a0a222c709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFyaXN0YSUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1718791985055-e1b06ef5961d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFyaXN0YSUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D',
   ],
-   partnerLogo: 'https://url-logo-partner.jpg',
+   partnerLogo: Amore,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
         {
@@ -1558,12 +1558,12 @@ city:"Ibagué"
   }
   ],
     carouselImages: [
-    'https://url-imagen-1.jpg',
-    'https://url-imagen-2.jpg',
-    'https://url-imagen-3.jpg',
-    'https://url-imagen-4.jpg',
+    'https://images.unsplash.com/photo-1596914255028-18a986e2dee7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1576365503602-7327d056d159?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDU0fHx8ZW58MHx8fHx8',
+    'https://images.unsplash.com/photo-1619711444040-52c6b12b4997?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNob2NvbGF0ZXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1504205758521-892897f3a28e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ1fHx8ZW58MHx8fHx8',
   ],
-   partnerLogo: 'https://url-logo-partner.jpg',
+   partnerLogo: Pastel,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
         {
@@ -1846,12 +1846,12 @@ city:"Ibagué"
   }
   ],
        carouselImages: [
-    'https://url-imagen-1.jpg',
-    'https://url-imagen-2.jpg',
-    'https://url-imagen-3.jpg',
-    'https://url-imagen-4.jpg',
+    'https://images.unsplash.com/photo-1560427183-4efd29c38997?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHBhbmFkZXIlQzMlQURhfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1643188389404-5a10e50023bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM2fHxwYW5hZGVyJUMzJUFEYXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1549057188-efd70413345e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAxfHxwYW5hZGVyJUMzJUFEYXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1450862479751-84eeaf2fcca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY5fHxwYW5hZGVyJUMzJUFEYXxlbnwwfHwwfHx8MA%3D%3D',
   ],
-   partnerLogo: 'https://url-logo-partner.jpg',
+   partnerLogo: TresCastillos,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
       ],
