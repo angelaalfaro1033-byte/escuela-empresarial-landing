@@ -62,29 +62,29 @@ export function CourseCard({
       'E.E. BELLEZA': {
         primary: 'bg-pink-500',
         gradient: 'bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700',
-        bg: '#FFC0CB'
+        bg: '#66024d'
       },
       'E.E. GASTRONOMÍA': {
         primary: 'bg-amber-700',
         gradient: 'bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900',
-        bg: '#A0522D'
+        bg: '#772804'
       },
       'E.E. AUTOPARTES': {
         primary: 'bg-gray-500',
         gradient: 'bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700',
-        bg: '#B0B0B0'
+        bg: '#570404'
       },
       'E.E. DISEÑO-MANUALIDADES': {
         primary: 'bg-purple-500',
         gradient: 'bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700',
-        bg: '#9370DB'
+        bg: '#270963'
       }
     };
     
     return colorMap[category] || {
       primary: 'bg-blue-500',
       gradient: 'bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700',
-      bg: '#3B82F6'
+      bg: '#0a3375'
     };
   };
 
