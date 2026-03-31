@@ -88,7 +88,6 @@ export function CourseCard({
     };
   };
 
-  // Imágenes de carrusel - usa las proporcionadas o fallback
   const defaultCarouselImages = [
     image,
     'https://images.unsplash.com/photo-1767595666159-48794b9e9a7e?w=1080',
@@ -100,7 +99,6 @@ export function CourseCard({
     ? carouselImages 
     : defaultCarouselImages;
 
-  // Logo del partner - usa el proporcionado o fallback
   const defaultPartnerLogo = 'https://images.unsplash.com/photo-1765852549902-bd9c79d01afb?w=400';
   const modalPartnerLogo = partnerLogo || defaultPartnerLogo;
 
@@ -160,7 +158,7 @@ export function CourseCard({
             )}
           </div>
 
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-4 line-clamp-2">
             {description}
           </p>
 
@@ -313,6 +311,8 @@ export function CourseCard({
         categoryColor={getCategoryColors()}
         carouselImages={modalCarouselImages}
         partnerLogo={modalPartnerLogo}
+         available={available}
+  registrationUrl={registrationUrl}
       />
     </>
   )

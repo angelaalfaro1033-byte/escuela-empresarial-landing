@@ -21,6 +21,8 @@ interface CourseModalProps {
   };
   carouselImages: string[];
   partnerLogo: string;
+   available: boolean;
+  registrationUrl?: string;
 }
 
 function NextArrow(props: any) {
@@ -56,6 +58,8 @@ export function CourseModal({
   categoryColor,
   carouselImages,
   partnerLogo,
+  available,
+  registrationUrl
 }: CourseModalProps) {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -165,14 +169,24 @@ export function CourseModal({
                         {course.description}
                       </p>
                       
-                     <div 
-                        className="bg-gray-50 rounded-lg p-4 border-l-2"
-                        style={{ borderColor: categoryColor?.bg || "#D94EE6" }}
-                        >
-                        <p className="text-sm text-gray-600">
-                             ¿Te interesa este curso? Haz clic en el botón de <strong>Registrarse</strong> para continuar.
-                        </p>
-                        </div>
+                    {available && (
+  <div 
+    className="bg-gray-50 rounded-lg p-4 border-l-2"
+    style={{ borderColor: categoryColor?.bg || "#D94EE6" }}
+  >
+    <p className="text-sm text-gray-600">
+      ¿Te interesa este curso? Haz clic en{" "}
+      <strong
+        className="cursor-pointer underline"
+        style={{ color: categoryColor?.bg || "#D94EE6" }}
+        onClick={() => window.open(registrationUrl, "_blank")}
+      >
+        Registrarse
+      </strong>{" "}
+      para continuar.
+    </p>
+  </div>
+)}
                     </div>
 
                     {/* Right Column - Partner Logo */}

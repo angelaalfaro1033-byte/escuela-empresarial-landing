@@ -55,8 +55,8 @@ type CourseSession = {
   city: 'Ibagué' | 'Neiva';
 }
 
-export default function App() { 
-
+export default function App() {
+  
   const courseCategories: CourseCategory[] = [
     {
       category: 'E.E. BELLEZA',
@@ -382,7 +382,7 @@ city:"Ibagué"
         {
           id: 'makeup',
           title: 'Maquillaje Profesional',
-          description: 'Domina las técnicas profesionales de maquillaje para todo tipo de eventos y ocasiones especiales.',
+          description: 'Domina las técnicas profesionales de maquillaje para todo tipo de eventos y ocasiones especiales. En este curso aprenderás desde los fundamentos de la teoría del color, preparación de la piel, corrección y contorneo facial, hasta técnicas avanzadas de maquillaje de novia, social, editorial y artístico. Trabajarás con productos de primera calidad, conocerás las últimas tendencias en makeup, y desarrollarás tu propio estilo como maquillador profesional. Incluye prácticas con modelos reales y portfolios de trabajo. Perfecto para quienes desean convertirse en makeup artists profesionales o emprendedores del sector de la belleza.',
           image: 'https://images.unsplash.com/photo-1612883695890-f2ab22e65215?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',          
           partner: 'Masglo',
           available: true,
@@ -666,11 +666,11 @@ city:"Ibagué"
   ],
    partnerLogo: Masglo,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-        }, 
+        },
         {
           id: 'colorimetry',
           title: 'Colorimetría',
-          description: 'Conviértete en experto en teoría del color y técnicas avanzadas de coloración capilar profesional.',
+          description: 'Conviértete en experto en teoría del color y técnicas avanzadas de coloración capilar profesional. Este programa especializado te enseñará a dominar el círculo cromático, neutralización de tonos no deseados, corrección de color, balayage, mechas, ombré, y técnicas de decoloración segura. Aprenderás a diagnosticar el estado del cabello, formular mezclas personalizadas, trabajar con diferentes texturas y tipos de cabello, y lograr resultados espectaculares en cada aplicación. Incluye formación en productos profesionales Alfaparf, protocolos de seguridad, y manejo de casos complejos. Ideal para estilistas, peluqueros y emprendedores que buscan especializarse en uno de los servicios más rentables del sector.',
           image: 'https://images.unsplash.com/photo-1617391654484-2894196c2cc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYWlyJTIwc2Fsb24lMjBjb2xvciUyMHRyZWF0bWVudHxlbnwxfHx8fDE3NzI0NzU3OTF8MA&ixlib=rb-4.1.0&q=80&w=1080',
           partner: 'Alfaparf',
           available: true,
@@ -958,7 +958,7 @@ city:"Ibagué"
        {
   id: 'barbershop',
   title: 'Barbería',
-  description: 'Aprende todas las técnicas de corte clásico y moderno, afeitado profesional y diseño de barba.',
+  description: 'Aprende todas las técnicas de corte clásico y moderno, afeitado profesional y diseño de barba. Este curso integral cubre desde fundamentos básicos como manejo de máquinas, tijeras y navajas, hasta técnicas avanzadas de fade, degradados precisos, diseños de líneas, texturas y estilos urbanos. Dominarás el arte del afeitado tradicional con navaja, perfilado de barbas, mantenimiento de bigotes, y servicios premium de barbería. Incluye formación en atención al cliente, creación de ambientes masculinos, tendencias actuales y estrategias para destacar en el competitivo mercado de las barberías. Perfecto para emprendedores que desean abrir su propia barbería o estilistas que buscan especializarse en servicios masculinos.',
   image: 'https://images.unsplash.com/photo-1547648946-2b1fd7eab923?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXIlMjBzaG9wJTIwY3V0dGluZyUyMGhhaXJ8ZW58MXx8fHwxNzcyNTgwMzE5fDA&ixlib=rb-4.1.0&q=80&w=1080',
   partner: 'Funse',
   available: true,
@@ -1111,7 +1111,7 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1651923098148-1c39bfa23331?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA1fHxwZWx1cXVlcmlhfGVufDB8fDB8fHww',
   ],
    partnerLogo: Funse,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
       ],
     },
@@ -1564,13 +1564,13 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1504205758521-892897f3a28e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ1fHx8ZW58MHx8fHx8',
   ],
    partnerLogo: Pastel,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-        },
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+},
         {
           id: 'bakery',
           title: 'Panadería Artesanal',
-          description: 'Domina las técnicas de panadería tradicional y moderna para crear panes de la más alta calidad.',
-          image: panaderiaImg,
+          description: 'Domina las técnicas de panadería tradicional y moderna para crear panes de la más alta calidad. Este curso intensivo te enseñará desde los fundamentos de la panificación: tipos de harinas, levaduras, masa madre natural, amasado correcto, fermentación, hasta técnicas avanzadas de panadería europea y artesanal. Aprenderás a elaborar panes franceses, integrales, rústicos, baguettes, ciabatta, focaccia, panes dulces y productos de bollería. Incluye formación en cálculo de costos, conservación óptima, equipamiento profesional y tendencias actuales en panadería saludable. Perfecto para emprendedores que desean montar su propia panadería o chefs que buscan ampliar sus habilidades en el arte del pan.',
+  image: panaderiaImg,
           partner: 'Tres Castillos',
           available: true,
           sessions: [
@@ -1864,11 +1864,18 @@ city:"Ibagué"
         {
           id: 'motorcycle',
           title: 'Mantenimiento de Motos',
-          description: 'Curso exclusivo para miembros de las Fuerzas Militares. Aprende el mantenimiento integral de motocicletas.',
+          description: 'Curso exclusivo para miembros de las Fuerzas Militares. Aprende el mantenimiento integral de motocicletas Honda, desde servicios básicos hasta diagnóstico avanzado. Este programa especializado cubre mecánica de motores de 2 y 4 tiempos, sistemas de transmisión, frenos, suspensión, sistemas eléctricos, inyección electrónica, y diagnóstico de fallas. Incluye prácticas intensivas con motos reales, uso de herramientas especializadas, interpretación de manuales técnicos, y protocolos de seguridad. Formación certificada por Honda que te permitirá realizar mantenimientos preventivos y correctivos con estándares profesionales. Exclusivo para personal de las Fuerzas Militares de Colombia con convenios especiales.',
 image: 'https://images.unsplash.com/photo-1762604462465-76720d039e9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3RvcmN5Y2xlJTIwbWFpbnRlbmFuY2UlMjBtZWNoYW5pYyUyMHdvcmtzaG9wfGVufDF8fHx8MTc3MjU4MDMyMXww&ixlib=rb-4.1.0&q=80&w=1080',          sessions:[],
           partner: 'Honda Motos - Curso exclusivo FFMM',
           available: false,
-        },
+           carouselImages: [
+    'https://images.unsplash.com/photo-1632733711679-529326f6db12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGF1dG9zZXJ2aWNlfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1637640125496-31852f042a60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGF1dG9zZXJ2aWNlfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1613214149922-f1809c99b414?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGF1dG9zZXJ2aWNlfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1597766325363-f5576d851d6a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGF1dG9zZXJ2aWNlfGVufDB8fDB8fHww',
+  ],
+   partnerLogo: Honda,
+},
       ],
     },
     {
@@ -1879,7 +1886,7 @@ image: 'https://images.unsplash.com/photo-1762604462465-76720d039e9f?crop=entrop
         {
   id: 'decoration',
   title: 'Decoración Comercial con Globos y Arreglos Florales',
-  description: 'Aprende a crear impresionantes decoraciones para eventos con globos y arreglos florales profesionales.',
+  description: 'Aprende a crear impresionantes decoraciones para eventos con globos y arreglos florales profesionales. Este curso completo te capacitará en técnicas de globología, desde estructuras básicas hasta diseños elaborados: arcos, columnas, bouquets, esculturas, decoraciones temáticas y orgánicas. También dominarás el arte floral: composición de ramos, centros de mesa, arreglos corporativos, bouquets de novia, y diseños modernos con flores naturales y artificiales. Incluye formación en tendencias actuales, combinación de colores, presupuestos, logística de montaje y desmontaje. Ideal para emprendedores del sector de eventos, wedding planners, o creativos que buscan ofrecer servicios de decoración de alta gama para bodas, cumpleaños, eventos corporativos y celebraciones especiales.',
 image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxsb29uJTIwZGVjb3JhdGlvbiUyMHBhcnR5JTIwZXZlbnR8ZW58MXx8fHwxNzcyNTgwMzIyfDA&ixlib=rb-4.1.0&q=80&w=1080',  partner: 'Sempertex - Funse',
   available: true,
   sessions: [
@@ -2145,14 +2152,14 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
   }
   ],
    carouselImages: [
-    'https://url-imagen-1.jpg',
-    'https://url-imagen-2.jpg',
-    'https://url-imagen-3.jpg',
-    'https://url-imagen-4.jpg',
+    'https://images.unsplash.com/photo-1768776183829-45e5f7553629?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA0fHxkZWNvcmFjaSVDMyVCM24lMjBnbG9ib3N8ZW58MHx8MHx8fDA%3D',
+    'https://images.unsplash.com/photo-1689601535474-195d10eca664?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGRlY29yYWNpJUMzJUIzbiUyMGdsb2Jvc3xlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1769038932067-6183daa327ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGRlY29yYWNpJUMzJUIzbiUyMGdsb2Jvc3xlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1770804545377-98b051c2bc4b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE0fHxkZWNvcmFjaSVDMyVCM24lMjBnbG9ib3N8ZW58MHx8MHx8fDA%3D',
   ],
-   partnerLogo: 'https://url-logo-partner.jpg',
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-        },
+   partnerLogo: Sempertex,
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+},
       ],
     },
   ];
@@ -2216,7 +2223,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
     <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <Header />
       <StatsSection />
-      
+      <AboutSection/>
       {/* Courses Section */}
       <section id="cursos" className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
@@ -2228,7 +2235,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
               <motion.div 
                 key={categoryData.category} 
                 id={sectionId}
-                className={`mb-16 transition-all duration-500 relative`}
+                className={`mb-32 transition-all duration-500 relative pb-16`}
                 animate={{
                   scale: 1,
                 }}
