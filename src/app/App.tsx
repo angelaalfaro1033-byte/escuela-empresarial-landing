@@ -2323,7 +2323,6 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
         </div>
       </section>
             <SponsorLogos />
-      <StatsSection />
       <Footer />
     </div>
   );
