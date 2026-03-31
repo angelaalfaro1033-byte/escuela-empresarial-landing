@@ -165,11 +165,14 @@ export function CourseModal({
                         {course.description}
                       </p>
                       
-                      <div className="bg-gray-50 rounded-lg p-4 border-l-2" style={{ borderColor: categoryColor.bg }}>
+                     <div 
+                        className="bg-gray-50 rounded-lg p-4 border-l-2"
+                        style={{ borderColor: categoryColor?.bg || "#D94EE6" }}
+                        >
                         <p className="text-sm text-gray-600">
-                          ✨ <strong>Certificación avalada</strong> por nuestro aliado estratégico
+                             ¿Te interesa este curso? Haz clic en el botón de <strong>Registrarse</strong> para continuar.
                         </p>
-                      </div>
+                        </div>
                     </div>
 
                     {/* Right Column - Partner Logo */}

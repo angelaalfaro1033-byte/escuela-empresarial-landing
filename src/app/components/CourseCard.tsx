@@ -24,6 +24,8 @@ interface CourseCardProps {
   registrationUrl?: string
   categoryColor?: string
   category?: string
+  carouselImages?: string[]
+  partnerLogo?: string
 }
 
 export function CourseCard({
@@ -36,6 +38,8 @@ export function CourseCard({
   registrationUrl = "#",
   categoryColor,
   category = "Curso",
+  carouselImages,
+  partnerLogo,
 }: CourseCardProps) {
 
   const previewSessions = (sessions ?? []).slice(0, 2)
@@ -84,16 +88,21 @@ export function CourseCard({
     };
   };
 
-  // Imágenes de carrusel (4 imágenes de ejemplo)
-  const carouselImages = [
-    image, // Imagen principal del curso
-    'https://images.unsplash.com/photo-1767595666159-48794b9e9a7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBjb3Vyc2UlMjB0cmFpbmluZyUyMHN0dWRlbnRzfGVufDF8fHx8MTc3NDkwNjg2NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    'https://images.unsplash.com/photo-1759521296047-89338c8e083d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb29raW5nJTIwY2xhc3MlMjBjaGVmJTIwaW5zdHJ1Y3RvcnxlbnwxfHx8fDE3NzQ5MDY4NjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    'https://images.unsplash.com/photo-1763310225230-6e15b125935a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB3b3Jrc2hvcCUyMGNyZWF0aXZlJTIwY2xhc3N8ZW58MXx8fHwxNzc0OTA2ODY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+  // Imágenes de carrusel - usa las proporcionadas o fallback
+  const defaultCarouselImages = [
+    image,
+    'https://images.unsplash.com/photo-1767595666159-48794b9e9a7e?w=1080',
+    'https://images.unsplash.com/photo-1759521296047-89338c8e083d?w=1080',
+    'https://images.unsplash.com/photo-1763310225230-6e15b125935a?w=1080',
   ];
 
-  // Logo del partner
-  const partnerLogo = 'https://images.unsplash.com/photo-1765852549902-bd9c79d01afb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3NtZXRpY3MlMjBiZWF1dHklMjBwcm9kdWN0c3xlbnwxfHx8fDE3NzQ5MDY4NzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
+  const modalCarouselImages = carouselImages && carouselImages.length === 4 
+    ? carouselImages 
+    : defaultCarouselImages;
+
+  // Logo del partner - usa el proporcionado o fallback
+  const defaultPartnerLogo = 'https://images.unsplash.com/photo-1765852549902-bd9c79d01afb?w=400';
+  const modalPartnerLogo = partnerLogo || defaultPartnerLogo;
 
   return (
     <>
@@ -291,7 +300,6 @@ export function CourseCard({
         </div>
       )}
 
-      {/* MODAL DE CURSO CON CARRUSEL */}
       <CourseModal
         isOpen={openCourseModal}
         onClose={() => setOpenCourseModal(false)}
@@ -303,8 +311,8 @@ export function CourseCard({
           category
         }}
         categoryColor={getCategoryColors()}
-        carouselImages={carouselImages}
-        partnerLogo={partnerLogo}
+        carouselImages={modalCarouselImages}
+        partnerLogo={modalPartnerLogo}
       />
     </>
   )

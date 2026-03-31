@@ -13,6 +13,16 @@ import { useEffect, useState } from "react";
 import {  BellezaBackground,  GastronomiaBackground,  AutopartesBackground,  DisenoBackground } from './components/CategoryBackgrounds';
 import { useActiveSection } from './hooks/useActiveSection';
 import { Sparkles } from 'lucide-react';
+import Masglo from '../assets/images/masglo.png';
+import Alfaparf from '../assets/images/Alfaparf.png';
+import Funse from '../assets/images/funse.png';
+import Amore from '../assets/images/amore.png';
+import TresCastillos from '../assets/images/3castillos.png';
+import Honda from '../assets/images/honda.png';
+import Sempertex from '../assets/images/Sempertex.png';
+import DrakionTech from '../assets/images/drakion.png';
+import Dhamaile from '../assets/images/Dhamaile.png';
+import Cauchera from "../assets/images/confederacionCauchera.png";
 
 interface Course {
   id: string
@@ -22,7 +32,9 @@ interface Course {
   partner: string
   available: boolean
   sessions?: CourseSession[]
-    registrationUrl?: string;
+  registrationUrl?: string
+  carouselImages?: string[]
+  partnerLogo?: string
 }
 
 interface CourseCategory {
@@ -43,7 +55,8 @@ type CourseSession = {
   city: 'Ibagué' | 'Neiva';
 }
 
-export default function App() {
+export default function App() { 
+
   const courseCategories: CourseCategory[] = [
     {
       category: 'E.E. BELLEZA',
@@ -355,8 +368,17 @@ city:"Ibagué"
     city: "Neiva"
   }
   ],
+    carouselImages: [
+    'https://images.unsplash.com/photo-1737214475337-325780f81a27?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1562505497-fdca6a606ac3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1753285311550-154917dab783?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1673985402265-46c4d2e53982?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  ],
+   partnerLogo: Masglo,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
+       
+
         {
           id: 'makeup',
           title: 'Maquillaje Profesional',
@@ -636,8 +658,15 @@ city:"Ibagué"
     city: "Neiva"
   }
 ],
+      carouselImages: [
+    'https://images.unsplash.com/photo-1709477542149-f4e0e21d590b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1611826585949-b0ccabd2c1a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1ha2V1cHxlbnwwfHwwfHx8MA%3D%3D',
+    'https://plus.unsplash.com/premium_photo-1661770850921-2b0b4a22d6e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fG1ha2V1cHxlbnwwfHwwfHx8MA%3D%3D',
+    'https://plus.unsplash.com/premium_photo-1679750867572-8ce0c81f7c0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1ha2V1cHxlbnwwfHwwfHx8MA%3D%3D',
+  ],
+   partnerLogo: Masglo,
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-        },
+        }, 
         {
           id: 'colorimetry',
           title: 'Colorimetría',
@@ -917,6 +946,13 @@ city:"Ibagué"
     city: "Neiva"
   }
   ],
+        carouselImages: [
+    'https://url-imagen-1.jpg',
+    'https://url-imagen-2.jpg',
+    'https://url-imagen-3.jpg',
+    'https://url-imagen-4.jpg',
+  ],
+   partnerLogo: 'https://url-logo-partner.jpg',
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
        {
@@ -1068,8 +1104,15 @@ city:"Ibagué"
     city: "Ibagué"
   }
   ],
-  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-}
+    carouselImages: [
+    'https://url-imagen-1.jpg',
+    'https://url-imagen-2.jpg',
+    'https://url-imagen-3.jpg',
+    'https://url-imagen-4.jpg',
+  ],
+   partnerLogo: 'https://url-logo-partner.jpg',
+          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+        },
       ],
     },
     {
@@ -1356,6 +1399,13 @@ city:"Ibagué"
     city: "Neiva"
   }
   ],
+         carouselImages: [
+    'https://url-imagen-1.jpg',
+    'https://url-imagen-2.jpg',
+    'https://url-imagen-3.jpg',
+    'https://url-imagen-4.jpg',
+  ],
+   partnerLogo: 'https://url-logo-partner.jpg',
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
         {
@@ -1507,8 +1557,15 @@ city:"Ibagué"
     city: "Ibagué"
   }
   ],
-  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-},
+    carouselImages: [
+    'https://url-imagen-1.jpg',
+    'https://url-imagen-2.jpg',
+    'https://url-imagen-3.jpg',
+    'https://url-imagen-4.jpg',
+  ],
+   partnerLogo: 'https://url-logo-partner.jpg',
+          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+        },
         {
           id: 'bakery',
           title: 'Panadería Artesanal',
@@ -1788,6 +1845,13 @@ city:"Ibagué"
     city: "Neiva"
   }
   ],
+       carouselImages: [
+    'https://url-imagen-1.jpg',
+    'https://url-imagen-2.jpg',
+    'https://url-imagen-3.jpg',
+    'https://url-imagen-4.jpg',
+  ],
+   partnerLogo: 'https://url-logo-partner.jpg',
           registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
         },
       ],
@@ -2080,8 +2144,15 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
     city: "Neiva"
   }
   ],
-  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
-},
+   carouselImages: [
+    'https://url-imagen-1.jpg',
+    'https://url-imagen-2.jpg',
+    'https://url-imagen-3.jpg',
+    'https://url-imagen-4.jpg',
+  ],
+   partnerLogo: 'https://url-logo-partner.jpg',
+          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+        },
       ],
     },
   ];
@@ -2144,7 +2215,6 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
   return (
     <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <Header />
-      <AboutSection />
       <StatsSection />
       
       {/* Courses Section */}
@@ -2235,6 +2305,8 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
                       categoryColor={categoryData.color}
                       category={categoryData.category}
                       registrationUrl={course.registrationUrl}
+                      carouselImages={course.carouselImages}
+                      partnerLogo={course.partnerLogo}
                     />
                   ))}
                 </div>
