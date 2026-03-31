@@ -1123,7 +1123,7 @@ city:"Ibagué"
         {
           id: 'barista',
           title: 'Barismo',
-          description: 'Descubre el arte del café: desde la selección del grano hasta el latte art más sofisticado.',
+          description: 'Descubre el arte del café: desde la selección del grano hasta el latte art más sofisticado. En este curso completo aprenderás todo sobre el mundo del café, incluyendo tipos de granos, métodos de tostado, preparación con máquinas espresso profesionales, técnicas de extracción perfecta, creación de bebidas calientes y frías, y el fascinante arte del latte art. Conocerás sobre calibración de molinos, limpieza y mantenimiento de equipos, servicio al cliente en cafeterías, y gestión de costos. Incluye certificación internacional en barismo. Ideal para emprendedores que sueñan con abrir su propia cafetería o profesionales que desean trabajar en el creciente sector de cafés especiales.',
           image: barismoImg ,
           partner: 'Amore e Caffé',
           available: true,
@@ -1411,7 +1411,7 @@ city:"Ibagué"
         {
   id: 'chocolate',
   title: 'Chocolatería',
-  description: 'Crea deliciosas obras maestras de chocolate y aprende técnicas de tempering y decoración.',
+  description: 'Crea deliciosas obras maestras de chocolate y aprende técnicas de tempering y decoración. Este programa especializado te introducirá al fascinante mundo del chocolate, desde su historia y proceso de producción hasta técnicas avanzadas de trabajo con chocolate profesional. Aprenderás templado (tempering) correcto, elaboración de bombones rellenos, trufas gourmet, tabletas decoradas, figuras de chocolate, y técnicas de enrobing. Incluye formación en tipos de chocolate (bitter, con leche, blanco), manejo de temperaturas, conservación, creatividad en diseño, y empaque profesional. Ideal para reposteros, emprendedores del sector dulce o amantes del chocolate que desean convertir su pasión en un negocio rentable y sofisticado.',
   image: chocolateImg,
   partner: 'Mi Dulce Pastel',
   available: true,
