@@ -20,51 +20,68 @@ import DrakionTech from '../../assets/images/drakion.png';
 import Pastel from "../../assets/images/pastel.png";
 import Dhamaile from '../../assets/images/Dhamaile.png';
 import Cauchera from "../../assets/images/confederacionCauchera.png";
+import UniCooperativa from '../../assets/images/UniCooperativa.png';
+import Richs from '../../assets/images/richs.png';
 
 export function SponsorLogos() {
+  const linkClassName = 'group block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4';
   const sponsors = [
     {
       image: Masglo,
+      website: 'https://www.masglo.com/',
       category: 'Belleza',
     },
     {
       image: Alfaparf,
+      website: 'https://www.alfaparfmilanopro.com/',
       category: 'Belleza',
     },
     {
       image: Funse,
+      website: 'https://www.funsecolombia.com/',
       category: 'Educación',
     },
     {
       image: Amore,
+      // TODO: Confirmar el perfil o sitio oficial de Amore Café antes de publicar.
+      website: 'https://www.instagram.com/amorecafeibague/',
       category: 'Gastronomía',
     },
     {
       image: Pastel,
+      // TODO: Sustituir por la web oficial de M.D.P. cuando sea proporcionada.
+      website: 'https://www.instagram.com/mdppasteleria/',
       category: 'Gastronomía',
     },
     {
       image: TresCastillos,
+      website: 'https://3castillos.com/',
       category: 'Gastronomía',
     },
     {
       image: Honda,
+      website: 'https://www.honda.com.co/',
       category: 'Autopartes',
     },
     {
       image: Sempertex,
+      website: 'https://sempertex.com/',
       category: 'Diseño',
     },
     {
       image: DrakionTech,
+      website: 'https://drakiontech.com/',
       category: 'Tecnología',
     },
     {
       image: Dhamaile,
+      // TODO: Confirmar la URL oficial de Dhamaile Chocolatería Fina antes de publicar.
+      website: 'https://dhamaile.com/',
       category: 'Gastronomía',
     },
     {
       image: Cauchera,
+      website: 'https://confecaucho.com/',
       category: 'agroindustrial',
     },
   ];
@@ -136,33 +153,39 @@ export function SponsorLogos() {
           {/* Recuadro 1 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
             <div className="flex flex-col items-center gap-4">
+              <a href="https://ccibague.org/" target="_blank" rel="noreferrer" aria-label="Visitar Cámara de Comercio de Ibagué" className={linkClassName}>
               <img
                 src={logoEmpresa}
                 alt="Logo Escuela Empresarial"
-                className="w-38 h-38 object-contain"
+                className="w-38 h-38 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
+              </a>
             </div>
           </div>
 
           {/* Recuadro 2 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
             <div className="flex flex-col items-center gap-4">
+              <a href="https://www.ccb.org.co/" target="_blank" rel="noreferrer" aria-label="Visitar Cámara de Comercio de Bogotá" className={linkClassName}>
               <img
                 src={logoBogota}
                 alt="Logo aliado"
-                className="w-38 h-38 object-contain"
+                className="w-38 h-38 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
+              </a>
             </div>
           </div>
 
           {/* Recuadro 3 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
             <div className="flex flex-col items-center gap-4">
+              <a href="https://cchuila.org/" target="_blank" rel="noreferrer" aria-label="Visitar Cámara de Comercio del Huila" className={linkClassName}>
               <img
                 src={logoHuila}
                 alt="Logo aliado"
-                className="w-38 h-38 object-contain"
+                className="w-38 h-38 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
+              </a>
             </div>
           </div>
 
@@ -185,25 +208,32 @@ export function SponsorLogos() {
           <Slider {...settings}>
             {sponsors.map((sponsor, index) => (
               <div key={index} className="px-2 w-full">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-64 mx-auto max-w-sm"
+                <a
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visitar sitio web de ${sponsor.category}`}
+                  className={linkClassName}
                 >
-                  <div className="h-46 flex items-center justify-center">
-                    <img
-                      src={sponsor.image}
-                      className="max-h-46 object-contain"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="font-bold text-lg text-gray-800">
-                    </h3>
-                    <p className="text-sm text-blue-600">
-                      {sponsor.category}
-                    </p>
-                  </div>
-                </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -3 }}
+                    transition={{ duration: 0.25 }}
+                    className="bg-white rounded-xl shadow-md overflow-hidden group-hover:shadow-xl transition-shadow duration-300 h-64 mx-auto max-w-sm"
+                  >
+                    <div className="h-46 flex items-center justify-center">
+                      <img
+                        src={sponsor.image}
+                        alt={`Logo de empresa aliada de ${sponsor.category}`}
+                        className="max-h-46 object-contain"
+                      />
+                    </div>
+                    <div className="p-4 text-center">
+                      <p className="text-sm text-blue-600">
+                        {sponsor.category}
+                      </p>
+                    </div>
+                  </motion.div>
+                </a>
               </div>
             ))}
           </Slider>
@@ -213,19 +243,26 @@ export function SponsorLogos() {
         <div className="grid grid-cols-2 gap-3 md:hidden px-2">
           {sponsors.map((sponsor, index) => (
             <div key={index}>
-              <div className="bg-white rounded-xl shadow-md overflow-hidden h-40 flex flex-col justify-center items-center">
-                <img
-                  src={sponsor.image}
-                  className="max-h-34 object-contain"
-                />
-                <div className="p-2 text-center">
-                  <h3 className="font-semibold text-sm text-gray-800">
-                  </h3>
-                  <p className="text-xs text-blue-600">
-                    {sponsor.category}
-                  </p>
+              <a
+                href={sponsor.website}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Visitar sitio web de ${sponsor.category}`}
+                className={linkClassName}
+              >
+                <div className="bg-white rounded-xl shadow-md overflow-hidden h-40 flex flex-col justify-center items-center transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                  <img
+                    src={sponsor.image}
+                    alt={`Logo de empresa aliada de ${sponsor.category}`}
+                    className="max-h-34 object-contain"
+                  />
+                  <div className="p-2 text-center">
+                    <p className="text-xs text-blue-600">
+                      {sponsor.category}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           ))}
         </div>
@@ -247,36 +284,65 @@ export function SponsorLogos() {
           {/* Recuadro 1 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
             <div className="flex flex-col items-center gap-4">
+              <a href="https://www.ut.edu.co/" target="_blank" rel="noreferrer" aria-label="Visitar Universidad del Tolima" className={linkClassName}>
               <img
                 src={logoUT}
                 alt="Logo UT"
-                className="w-44 h-44 object-contain"
+                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
+              </a>
             </div>
           </div>
 
           {/* Recuadro 2 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
             <div className="flex flex-col items-center gap-4">
+              <a href="https://www.uniminuto.edu/" target="_blank" rel="noreferrer" aria-label="Visitar UNIMINUTO" className={linkClassName}>
               <img
                 src={logoUniminuto}
                 alt="Logo UNIMINUTO"
-                className="w-44 h-44 object-contain"
+                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
+              </a>
             </div>
           </div>
 
           {/* Recuadro 3 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
             <div className="flex flex-col items-center gap-4">
+              <a href="https://www.tolima.gov.co/" target="_blank" rel="noreferrer" aria-label="Visitar Gobernación del Tolima" className={linkClassName}>
               <img
                 src={logoGonernacionTolima}
                 alt="Logo Gobernación del Tolima"
-                className="w-44 h-44 object-contain"
+                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
+              </a>
             </div>
           </div>
 
+          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+            <div className="flex flex-col items-center gap-4">
+              <a href="https://www.ucc.edu.co/" target="_blank" rel="noreferrer" aria-label="Visitar Universidad Cooperativa de Colombia" className={linkClassName}>
+              <img
+                src={UniCooperativa}
+                alt="Logo Universidad Cooperativa"
+                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+              </a>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+            <div className="flex flex-col items-center gap-4">
+              <a href="https://www.richs.com.co/" target="_blank" rel="noreferrer" aria-label="Visitar Rich's" className={linkClassName}>
+              <img
+                src={Richs}
+                alt="Logo RICH"
+                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+              </a>
+            </div>
+          </div>
         </div>
       </motion.div>
 

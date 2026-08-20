@@ -23,6 +23,8 @@ import Sempertex from '../assets/images/Sempertex.png';
 import DrakionTech from '../assets/images/drakion.png';
 import Dhamaile from '../assets/images/Dhamaile.png';
 import Cauchera from "../assets/images/confederacionCauchera.png";
+import TejidosAlTrapillo from '../assets/images/TejidosalTrapillo.jpg';
+import Trapillo2 from '../assets/images/trapillo2.jpg';
 
 interface Course {
   id: string
@@ -31,6 +33,10 @@ interface Course {
   image: string
   partner: string
   available: boolean
+  locations?: string[]
+  isNew?: boolean
+  availabilityNote?: string
+  modality?: string
   sessions?: CourseSession[]
   registrationUrl?: string
   carouselImages?: string[]
@@ -70,6 +76,8 @@ export default function App() {
           image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
           partner: 'Masglo',
           available: true,
+          locations: ['Neiva', 'Ibagué', 'Cajamarca', 'Rovira'],
+          locations: ['Neiva', 'Ibagué'],
           sessions: [
   {
 session:0,
@@ -674,6 +682,7 @@ city:"Ibagué"
           image: 'https://images.unsplash.com/photo-1617391654484-2894196c2cc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYWlyJTIwc2Fsb24lMjBjb2xvciUyMHRyZWF0bWVudHxlbnwxfHx8fDE3NzI0NzU3OTF8MA&ixlib=rb-4.1.0&q=80&w=1080',
           partner: 'Alfaparf',
           available: true,
+          locations: ['Neiva', 'Ibagué'],
           sessions: [
     {
     session: 0,
@@ -962,6 +971,7 @@ city:"Ibagué"
   image: 'https://images.unsplash.com/photo-1547648946-2b1fd7eab923?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXIlMjBzaG9wJTIwY3V0dGluZyUyMGhhaXJ8ZW58MXx8fHwxNzcyNTgwMzE5fDA&ixlib=rb-4.1.0&q=80&w=1080',
   partner: 'Funse',
   available: true,
+  locations: ['Ibagué'],
   sessions: [
      {
     session: 0,
@@ -1868,6 +1878,8 @@ city:"Ibagué"
 image: 'https://images.unsplash.com/photo-1762604462465-76720d039e9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3RvcmN5Y2xlJTIwbWFpbnRlbmFuY2UlMjBtZWNoYW5pYyUyMHdvcmtzaG9wfGVufDF8fHx8MTc3MjU4MDMyMXww&ixlib=rb-4.1.0&q=80&w=1080',          sessions:[],
           partner: 'Honda Motos - Curso exclusivo FFMM',
           available: false,
+          locations: ['Ibagué'],
+          availabilityNote: 'Curso exclusivo FFMM',
            carouselImages: [
     'https://images.unsplash.com/photo-1632733711679-529326f6db12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGF1dG9zZXJ2aWNlfGVufDB8fDB8fHww',
     'https://images.unsplash.com/photo-1637640125496-31852f042a60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGF1dG9zZXJ2aWNlfGVufDB8fDB8fHww',
@@ -2164,6 +2176,189 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
     },
   ];
 
+  const officialCourseData: Record<string, Partial<Course>> = {
+    'nail-design': {
+      title: 'Diseño y cuidado de uñas Master',
+      partner: 'Masglo Academy',
+      locations: ['Neiva', 'Ibagué'],
+    },
+    makeup: {
+      title: 'Maquillaje',
+      partner: 'Masglo Academy',
+      locations: ['Neiva', 'Ibagué', 'Cajamarca', 'Rovira'],
+    },
+    colorimetry: {
+      partner: 'Alfaparf Milano Professional',
+      locations: ['Neiva', 'Ibagué'],
+    },
+    barbershop: {
+      partner: 'FUNSE',
+      locations: ['Ibagué'],
+    },
+    barista: {
+      partner: 'C al Cubo',
+      locations: ['Neiva', 'Ibagué'],
+    },
+    chocolate: {
+      partner: 'DHAMAILE',
+      locations: ['Ibagué'],
+    },
+    bakery: {
+      title: 'Panadería',
+      partner: '3 Castillos',
+      locations: ['Neiva', 'Ibagué'],
+    },
+    motorcycle: {
+      title: 'Mantenimiento de motos',
+      partner: 'Honda Motos',
+      locations: ['Ibagué'],
+      available: false,
+      availabilityNote: 'Curso exclusivo FFMM',
+    },
+    decoration: {
+      title: 'Decoración con globos',
+      partner: 'Sempertex',
+      locations: ['Neiva', 'Ibagué'],
+    },
+  };
+
+  courseCategories.forEach((category) => {
+    category.courses.forEach((course) => Object.assign(course, officialCourseData[course.id]));
+  });
+
+  const masterNailCourse = courseCategories[0].courses.find((course) => course.id === 'nail-design');
+
+  const newCoursesByCategory: Record<number, Course[]> = {
+    0: [
+      {
+        id: 'nail-design-senior',
+        title: 'Diseño y cuidado de uñas Senior',
+        description: 'Información del curso próximamente.',
+        image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop',
+        partner: 'Masglo Academy',
+        locations: ['Neiva', 'Ibagué'],
+        available: true,
+        isNew: true,
+      },
+      {
+        id: 'lashes',
+        title: 'Pestañas',
+        description: 'Información del curso próximamente.',
+        image: 'https://images.unsplash.com/photo-1674049406467-824ea37c7184?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlbGxlemElMjBwZXN0YSVDMyVCMWFzfGVufDB8fDB8fHww',
+        partner: 'FUNSE',
+        locations: ['Ibagué'],
+        available: true,
+        isNew: true,
+      },
+    ],
+    1: [
+      {
+        id: 'pastry',
+        title: 'Repostería',
+        description: 'Información del curso próximamente.',
+        image: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        partner: '3 Castillos',
+        locations: ['Neiva', 'Ibagué'],
+        available: true,
+        isNew: true,
+      },
+      {
+        id: 'coffee-roasting',
+        title: 'Tostión Café de Especialidad',
+        description: 'Información del curso próximamente.',
+        image: 'https://images.unsplash.com/photo-1607681034540-2c46cc71896d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VG9zdGklQzMlQjNuJTIwQ2FmJUMzJUE5JTIwZGUlMjBFc3BlY2lhbGlkYWR8ZW58MHx8MHx8fDA%3D',
+        partner: 'C al Cubo',
+        locations: ['Ibagué'],
+        available: true,
+        isNew: true,
+      },
+    ],
+    3: [
+      {
+        id: 'floral-arrangements',
+        title: 'Decoración con arreglos florales',
+        description: 'Información del curso próximamente.',
+        image: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1200&auto=format&fit=crop',
+        partner: 'FUNSE',
+        locations: ['Neiva', 'Ibagué'],
+        available: true,
+        isNew: true,
+      },
+      {
+        id: 't-shirt-yarn',
+        title: 'Tejidos al Trapillo',
+        description: 'Información del curso próximamente.',
+        image: 'https://images.unsplash.com/photo-1580301762395-2f3f06e7c7b1?q=80&w=1200&auto=format&fit=crop',
+        partner: 'Por definir',
+        locations: ['Ibagué', 'Cajamarca', 'Rovira'],
+        available: true,
+        isNew: true,
+      },
+    ],
+  };
+
+  Object.entries(newCoursesByCategory).forEach(([categoryIndex, courses]) => {
+    courseCategories[Number(categoryIndex)].courses.push(...courses);
+  });
+
+  const courseEnhancements: Record<string, Partial<Course>> = {
+    'nail-design-senior': {
+      description: 'Fortalece tus habilidades en diseño y cuidado de uñas con técnicas orientadas a lograr acabados precisos, creativos y profesionales. El curso está pensado para quienes desean perfeccionar su práctica y ampliar sus recursos para la atención de clientes.',
+      image: masterNailCourse?.image,
+      carouselImages: masterNailCourse?.carouselImages,
+      partnerLogo: masterNailCourse?.partnerLogo,
+    },
+    lashes: {
+      description: 'Aprende los fundamentos del diseño y aplicación de pestañas para realzar la mirada con resultados armónicos y cuidados. Conocerás criterios de preparación, higiene, selección y acabado para desarrollar un servicio de belleza profesional.',
+      carouselImages: [
+        'https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVsbGV6YSUyMHBlc3RhJUMzJUIxYXN8ZW58MHx8MHx8fDA%3D',
+        'https://images.unsplash.com/photo-1735151226446-1d364b4adc2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVsbGV6YSUyMHBlc3RhJUMzJUIxYXN8ZW58MHx8MHx8fDA%3D',
+        'https://images.unsplash.com/photo-1674049406467-824ea37c7184?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlbGxlemElMjBwZXN0YSVDMyVCMWFzfGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1567629307995-b9f33097bd30?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJlbGxlemElMjBwZXN0YSVDMyVCMWFzfGVufDB8fDB8fHww',
+      ],
+      partnerLogo: Funse,
+    },
+    pastry: {
+      description: 'Desarrolla técnicas de repostería para elaborar preparaciones dulces con atención al sabor, la textura y la presentación. El curso brinda una base práctica para quienes buscan fortalecer sus habilidades culinarias o impulsar sus ideas de negocio.',
+      carouselImages: [
+        'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFJlcG9zdGVyJUMzJUFEYXxlbnwwfHwwfHx8MA%3D%3D',
+        'https://plus.unsplash.com/premium_photo-1690214491960-d447e38d0bd0?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      ],
+      partnerLogo: TresCastillos,
+    },
+    'coffee-roasting': {
+      description: 'Explora el proceso de tostión de café de especialidad y comprende cómo las decisiones durante el tueste influyen en el aroma, sabor y perfil de cada grano. Una experiencia orientada a reconocer y cuidar las cualidades del café.',
+      carouselImages: [
+        'https://images.unsplash.com/photo-1607681034540-2c46cc71896d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VG9zdGklQzMlQjNuJTIwQ2FmJUMzJUE5JTIwZGUlMjBFc3BlY2lhbGlkYWR8ZW58MHx8MHx8fDA%3D',
+        'https://images.unsplash.com/photo-1525088553748-01d6e210e00b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VG9zdGklQzMlQjNuJTIwQ2FmJUMzJUE5JTIwZGUlMjBFc3BlY2lhbGlkYWR8ZW58MHx8MHx8fDA%3D',
+        'https://images.unsplash.com/photo-1561986810-4f3ba2f46ceb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VG9zdGklQzMlQjNuJTIwQ2FmJUMzJUE5JTIwZGUlMjBFc3BlY2lhbGlkYWR8ZW58MHx8MHx8fDA%3D',
+        'https://images.unsplash.com/photo-1518081692809-d68867210ca9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFRvc3RpJUMzJUIzbiUyMENhZiVDMyVBOSUyMGRlJTIwRXNwZWNpYWxpZGFkfGVufDB8fDB8fHww',
+      ],
+      partnerLogo: Amore,
+    },
+    'floral-arrangements': {
+      description: 'Aprende a crear arreglos florales para diferentes ocasiones, aplicando principios de composición, combinación de colores y presentación. El curso está dirigido a quienes desean desarrollar una propuesta creativa y cuidada para el sector de eventos.',
+      carouselImages: [
+        'https://images.unsplash.com/photo-1631407779166-86952be9dbd7?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1612633783539-e9926f45cc41?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1695903720989-a40837daced2?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1583780544671-000a728c2789?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      ],
+      partnerLogo: Funse,
+    },
+    't-shirt-yarn': {
+      description: 'Descubre técnicas de tejido con trapillo para crear piezas funcionales y decorativas a partir de este material versátil. El curso propone un acercamiento práctico para desarrollar habilidades manuales y explorar posibilidades creativas.',
+      image: TejidosAlTrapillo,
+      partner: '',
+      carouselImages: [TejidosAlTrapillo, Trapillo2],
+    },
+  };
+
+  courseCategories.forEach((category) => {
+    category.courses.forEach((course) => Object.assign(course, courseEnhancements[course.id]));
+  });
+
  const activeSection = useActiveSection(['belleza', 'gastronomia', 'autopartes', 'diseno', 'impacto', 'aliados']);
 
   const getSectionId = (category: string) => {
@@ -2172,6 +2367,13 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
     if (category === 'E.E. AUTOPARTES') return 'autopartes';
     if (category === 'E.E. DISEÑO – MANUALIDADES') return 'diseno';
     return '';
+  };
+
+  const schoolNames: Record<string, string> = {
+    belleza: 'Escuela Empresarial de la Belleza',
+    gastronomia: 'Escuela Empresarial de la Gastronomía',
+    autopartes: 'Escuela Empresarial de Autopartes',
+    diseno: 'Escuela Empresarial de Manualidades y Diseño',
   };
 
   const getCategoryBackground = (category: string, isActive: boolean) => {
@@ -2220,12 +2422,12 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
   };
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <div className="min-h-screen overflow-x-hidden bg-gray-50" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <Header />
       <StatsSection />
       <AboutSection/>
       {/* Courses Section */}
-      <section id="cursos" className="py-16 px-6">
+      <section id="cursos" className="py-14 sm:py-16 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {courseCategories.map((categoryData, categoryIndex) => {
             const sectionId = getSectionId(categoryData.category);
@@ -2273,7 +2475,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
                     <h2 className={`text-3xl md:text-4xl font-bold transition-all duration-300 ${
                       getCategoryColor(categoryData.category, isActive)
                     } ${isActive ? 'drop-shadow-lg' : ''}`}>
-                      {categoryData.category}
+                      {schoolNames[categoryData.id] ?? categoryData.category}
                     </h2>
                     {isActive && (
                       <motion.div
@@ -2309,6 +2511,10 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
                       sessions={course.sessions}
                       partner={course.partner}
                       available={course.available}
+                      locations={course.locations ?? []}
+                      isNew={course.isNew}
+                      availabilityNote={course.availabilityNote}
+                      modality={course.modality}
                       categoryColor={categoryData.color}
                       category={categoryData.category}
                       registrationUrl={course.registrationUrl}

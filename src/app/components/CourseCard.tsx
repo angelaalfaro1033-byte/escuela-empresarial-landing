@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, MapPin } from "lucide-react"
 import { useState } from "react"
 import { CourseModal } from "./CourseModal"
 
@@ -21,6 +21,10 @@ interface CourseCardProps {
   partner: string
   sessions?: Session[]
   available: boolean
+  locations: string[]
+  isNew?: boolean
+  availabilityNote?: string
+  modality?: string
   registrationUrl?: string
   categoryColor?: string
   category?: string
@@ -35,6 +39,10 @@ export function CourseCard({
   partner,
   sessions,
   available,
+  locations,
+  isNew = false,
+  availabilityNote,
+  modality,
   registrationUrl = "#",
   categoryColor,
   category = "Curso",
@@ -44,6 +52,7 @@ export function CourseCard({
 
   const previewSessions = (sessions ?? []).slice(0, 2)
   const remainingSessions = Math.max((sessions ?? []).length - 2, 0)
+  const canRegister = available && registrationUrl !== "#"
 
   const ibagueSessions = (sessions ?? []).filter(
     (s) => s.city === "Ibagué"
@@ -95,12 +104,12 @@ export function CourseCard({
     'https://images.unsplash.com/photo-1763310225230-6e15b125935a?w=1080',
   ];
 
-  const modalCarouselImages = carouselImages && carouselImages.length === 4 
+  const modalCarouselImages = carouselImages && carouselImages.length > 0 
     ? carouselImages 
     : defaultCarouselImages;
 
   const defaultPartnerLogo = 'https://images.unsplash.com/photo-1765852549902-bd9c79d01afb?w=400';
-  const modalPartnerLogo = partnerLogo || defaultPartnerLogo;
+  const modalPartnerLogo = partner ? (partnerLogo || defaultPartnerLogo) : undefined;
 
   return (
     <>
@@ -110,7 +119,7 @@ export function CourseCard({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+        className="h-full bg-white rounded-xl shadow-lg ring-1 ring-black/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
       >
         <div 
           className="relative h-48 overflow-hidden cursor-pointer"
@@ -127,17 +136,41 @@ export function CourseCard({
               No disponible
             </div>
           )}
+
+          {isNew && (
+            <div className="absolute top-4 left-4 bg-white/95 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold tracking-wide shadow-sm">
+              NUEVO
+            </div>
+          )}
         </div>
 
-        <div className="p-6">
+        <div className="p-5 sm:p-6">
 
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
             {title}
           </h3>
 
-          <p className="text-sm text-blue-600 mb-3 font-medium">
-            {partner}
-          </p>
+          {partner && (
+            <p className="text-sm text-blue-600 mb-3 font-medium">
+              {partner}
+            </p>
+          )}
+
+          <div className="mb-4">
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 mb-2">
+              <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+              Ubicaciones disponibles
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {locations.map((location) => (
+                <span key={location} className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700">
+                  {location}
+                </span>
+              ))}
+            </div>
+            {modality && <p className="mt-2 text-xs text-gray-500">Modalidad: {modality}</p>}
+            {availabilityNote && <p className="mt-2 text-xs font-medium text-gray-600">{availabilityNote}</p>}
+          </div>
 
           {/* SESIONES PREVIEW */}
           <div className="space-y-1 text-sm text-gray-600 mb-4">
@@ -164,24 +197,24 @@ export function CourseCard({
 
 <button
   onClick={() => {
-    if (available && registrationUrl !== "#") {
+    if (canRegister) {
       window.open(registrationUrl, "_blank")
     }
   }}
-  disabled={!available}
+  disabled={!canRegister}
   className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
-    available
+    canRegister
       ? "bg-[#D94EE6] text-white hover:bg-[#c13bcc] hover:shadow-lg hover:-translate-y-0.5"
       : "bg-gray-300 text-gray-500 cursor-not-allowed"
   }`}
 >
-  {available ? (
+  {canRegister ? (
     <>
       Registrarse
       <ExternalLink className="w-4 h-4" />
     </>
   ) : (
-    "No disponible"
+    available ? "Pre-registro próximamente" : "No disponible"
   )}
 </button>
         </div>

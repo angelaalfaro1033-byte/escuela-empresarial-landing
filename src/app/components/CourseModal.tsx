@@ -20,7 +20,7 @@ interface CourseModalProps {
     bg: string;
   };
   carouselImages: string[];
-  partnerLogo: string;
+  partnerLogo?: string;
    available: boolean;
   registrationUrl?: string;
 }
@@ -190,6 +190,7 @@ export function CourseModal({
                     </div>
 
                     {/* Right Column - Partner Logo */}
+                    {course.partner && partnerLogo && (
                     <div className="md:col-span-1">
                       <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
                         <div className={`w-1 h-5 ${categoryColor.primary} rounded-full`} />
@@ -208,6 +209,7 @@ export function CourseModal({
                         </p>
                       </div>
                     </div>
+                    )}
                   </div>
                 </div>
               </div>

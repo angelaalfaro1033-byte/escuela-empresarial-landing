@@ -1,9 +1,30 @@
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+
+const registrationUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header';
 
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
+        <section className="mb-12 rounded-2xl border border-white/10 bg-gradient-to-r from-[#0a3375] to-[#164c9f] px-5 py-7 shadow-lg sm:px-8 sm:py-8">
+          <div className="flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-200">Oferta académica</p>
+              <h2 className="mt-2 text-2xl font-semibold">Da el siguiente paso en tu formación</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-blue-100">Completa tu pre-registro y recibe la información disponible sobre nuestros cursos.</p>
+            </div>
+            <a
+              href={registrationUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-[#0a3375] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a3375]"
+            >
+              Pre-regístrate ahora
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        </section>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
           
           {/* Contact Info */}
