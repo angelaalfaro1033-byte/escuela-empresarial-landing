@@ -23,6 +23,14 @@ interface CourseModalProps {
   partnerLogo?: string;
    available: boolean;
   registrationUrl?: string;
+  locations: string[];
+  sessions?: Array<{
+    date: string;
+    time: string;
+    classroom: string;
+    city: string;
+    topic?: string;
+  }>;
 }
 
 function NextArrow(props: any) {
@@ -59,7 +67,9 @@ export function CourseModal({
   carouselImages,
   partnerLogo,
   available,
-  registrationUrl
+  registrationUrl,
+  locations,
+  sessions = []
 }: CourseModalProps) {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -94,6 +104,11 @@ export function CourseModal({
     ),
     dotsClass: "slick-dots !bottom-2",
   };
+
+  const sessionsByCity = locations.map((city) => ({
+    city,
+    sessions: sessions.filter((session) => session.city === city && session.topic !== 'Inducción' && session.topic !== 'Clausura'),
+  }));
 
   if (!isMounted) return null;
 
@@ -168,8 +183,27 @@ export function CourseModal({
                       <p className="text-gray-700 leading-relaxed mb-4">
                         {course.description}
                       </p>
+
+                      <div className="mb-4 space-y-3">
+                        {sessionsByCity.map(({ city, sessions: citySessions }) => (
+                          <div key={city} className="bg-gray-50 rounded-lg p-4 border-l-2" style={{ borderColor: categoryColor.bg }}>
+                            <p className="text-sm font-semibold text-gray-800">📍 {city}</p>
+                            {citySessions.length > 0 ? (
+                              <div className="mt-2 space-y-1 text-sm text-gray-600">
+                                {citySessions.map((session, index) => (
+                                  <p key={`${city}-${index}`}>
+                                    Fecha: {session.date} · Horario: {session.time}{session.classroom ? ` · Salón: ${session.classroom}` : ''}
+                                  </p>
+                                ))}
+                              </div>
+                            ) : (
+                              <p className="mt-2 text-sm text-gray-600">Actualmente no hay fechas disponibles para este curso en {city}.</p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
                       
-                    {available && (
+                    {available && registrationUrl && registrationUrl !== '#' && (
   <div 
     className="bg-gray-50 rounded-lg p-4 border-l-2"
     style={{ borderColor: categoryColor?.bg || "#D94EE6" }}

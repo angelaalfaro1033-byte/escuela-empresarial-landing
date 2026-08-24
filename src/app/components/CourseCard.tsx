@@ -345,7 +345,9 @@ export function CourseCard({
         carouselImages={modalCarouselImages}
         partnerLogo={modalPartnerLogo}
          available={available}
-  registrationUrl={registrationUrl}
+        registrationUrl={registrationUrl}
+        locations={locations}
+        sessions={sessions}
       />
     </>
   )

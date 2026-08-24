@@ -77,7 +77,6 @@ export default function App() {
           partner: 'Masglo',
           available: true,
           locations: ['Neiva', 'Ibagué', 'Cajamarca', 'Rovira'],
-          locations: ['Neiva', 'Ibagué'],
           sessions: [
   {
 session:0,
@@ -2212,8 +2211,8 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
       title: 'Mantenimiento de motos',
       partner: 'Honda Motos',
       locations: ['Ibagué'],
-      available: false,
-      availabilityNote: 'Curso exclusivo FFMM',
+      available: true,
+      availabilityNote: undefined,
     },
     decoration: {
       title: 'Decoración con globos',
@@ -2357,6 +2356,92 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
 
   courseCategories.forEach((category) => {
     category.courses.forEach((course) => Object.assign(course, courseEnhancements[course.id]));
+  });
+
+  const schedule = (dates: Array<[string, string]>, time: string, city: string) =>
+    dates.map(([date, classroom], index) => ({
+      session: index + 1,
+      date,
+      day: '',
+      topic: '',
+      time,
+      classroom,
+      partner: '',
+      city,
+    }));
+
+  const ibagueGeneralSessions = [
+    { session: 0, date: '7 de septiembre', day: '', topic: 'Inducción', time: '2:00 p. m.', classroom: '', partner: '', city: 'Ibagué' },
+    { session: 99, date: '9 de noviembre', day: '', topic: 'Clausura', time: '', classroom: '', partner: '', city: 'Ibagué' },
+  ];
+
+  const courseSchedules: Record<string, any[]> = {
+    'nail-design': [
+      ibagueGeneralSessions[0],
+      ...schedule([['16 de septiembre', 'Salón 4b'], ['29 de septiembre', 'Salón 4b'], ['21 de octubre', 'Salón 4b']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    'nail-design-senior': [
+      ibagueGeneralSessions[0],
+      ...schedule([['17 de septiembre', 'Salón 3b'], ['30 de septiembre', 'Salón 4b'], ['22 de octubre', 'Salón 4b']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    colorimetry: [
+      ibagueGeneralSessions[0],
+      ...schedule([['28 de septiembre', 'Salón 3b'], ['29 de septiembre', 'Salón 3b'], ['30 de septiembre', 'Salón 3b'], ['27 de octubre', 'Salón 4b'], ['28 de octubre', 'Salón 4b'], ['29 de octubre', 'Salón 4b']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    makeup: [
+      ...schedule([['16 de septiembre', 'Por definir'], ['30 de septiembre', 'Por definir'], ['7 de octubre', 'Por definir'], ['14 de octubre', 'Por definir'], ['21 de octubre', 'Por definir'], ['28 de octubre', 'Por definir']], '2:00 p. m. a 5:00 p. m.', 'Cajamarca'),
+      ...schedule([['18 de septiembre', 'Por definir'], ['2 de octubre', 'Por definir'], ['9 de octubre', 'Por definir'], ['16 de octubre', 'Por definir'], ['23 de octubre', 'Por definir'], ['30 de octubre', 'Por definir']], '2:00 p. m. a 5:00 p. m.', 'Rovira'),
+    ],
+    barista: [
+      ibagueGeneralSessions[0],
+      ...schedule([['12 de septiembre', 'Primer Piso CCI'], ['26 de septiembre', 'Primer Piso CCI'], ['10 de octubre', 'Primer Piso CCI']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    'coffee-roasting': [
+      ibagueGeneralSessions[0],
+      ...schedule([['19 de septiembre', 'Primer Piso CCI'], ['3 de octubre', 'Primer Piso CCI'], ['17 de octubre', 'Primer Piso CCI']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    pastry: [
+      ibagueGeneralSessions[0],
+      ...schedule([['15 de septiembre', 'Cocina Uniminuto'], ['16 de septiembre', 'Cocina Uniminuto'], ['29 de septiembre', 'Cocina Uniminuto'], ['30 de septiembre', 'Cocina Uniminuto'], ['13 de octubre', 'Cocina Uniminuto'], ['14 de octubre', 'Cocina Uniminuto']], '8:00 a. m. a 12:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    bakery: [
+      ibagueGeneralSessions[0],
+      ...schedule([['22 de septiembre', 'Cocina Uniminuto'], ['23 de septiembre', 'Cocina Uniminuto'], ['6 de octubre', 'Cocina Uniminuto'], ['7 de octubre', 'Cocina Uniminuto'], ['20 de octubre', 'Cocina Uniminuto'], ['21 de octubre', 'Cocina Uniminuto']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    decoration: [
+      ibagueGeneralSessions[0],
+      ...schedule([['17 de septiembre', 'Salón 3a'], ['1 de octubre', 'Salón 3a'], ['15 de octubre', 'Salón 3a']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    'floral-arrangements': [
+      ibagueGeneralSessions[0],
+      ...schedule([['24 de septiembre', 'Salón 3a'], ['8 de octubre', 'Salón 3a'], ['22 de octubre', 'Salón 3a']], '8:00 a. m. a 5:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+    't-shirt-yarn': [
+      ibagueGeneralSessions[0],
+      ...schedule([['16 de septiembre', 'Salón 3a'], ['23 de septiembre', 'Salón 3a'], ['30 de septiembre', 'Salón 3a'], ['7 de octubre', 'Salón 3a'], ['14 de octubre', 'Salón 3a'], ['21 de octubre', 'Salón 3a'], ['28 de octubre', 'Salón 3a']], '2:00 p. m. a 5:00 p. m.', 'Ibagué'),
+      ...schedule([['18 de septiembre', 'Por definir'], ['25 de septiembre', 'Por definir'], ['2 de octubre', 'Por definir'], ['9 de octubre', 'Por definir'], ['16 de octubre', 'Por definir'], ['23 de octubre', 'Por definir']], '2:00 p. m. a 5:00 p. m.', 'Cajamarca'),
+      ibagueGeneralSessions[1],
+    ],
+    motorcycle: [
+      ibagueGeneralSessions[0],
+      ...schedule([['17 de septiembre', 'Salón 3a'], ['24 de septiembre', 'Salón 4b'], ['1 de octubre', 'Salón 4b'], ['8 de octubre', 'Salón 4b'], ['15 de octubre', 'Salón 3a']], '5:30 p. m. a 9:00 p. m.', 'Ibagué'),
+      ibagueGeneralSessions[1],
+    ],
+  };
+
+  courseCategories.forEach((category) => {
+    category.courses.forEach((course) => {
+      if (courseSchedules[course.id]) course.sessions = courseSchedules[course.id];
+    });
   });
 
  const activeSection = useActiveSection(['belleza', 'gastronomia', 'autopartes', 'diseno', 'impacto', 'aliados']);

@@ -22,6 +22,7 @@ import Dhamaile from '../../assets/images/Dhamaile.png';
 import Cauchera from "../../assets/images/confederacionCauchera.png";
 import UniCooperativa from '../../assets/images/UniCooperativa.png';
 import Richs from '../../assets/images/richs.png';
+import Rucary from '../../assets/images/rucary.png';
 
 export function SponsorLogos() {
   const linkClassName = 'group block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4';
@@ -83,6 +84,12 @@ export function SponsorLogos() {
       image: Cauchera,
       website: 'https://confecaucho.com/',
       category: 'agroindustrial',
+    },
+    {
+      image: Rucary,
+      // TODO: Configurar la URL oficial de Rucary cuando sea proporcionada.
+      website: '#',
+      category: 'Aliado',
     },
   ];
 
