@@ -2289,7 +2289,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
         description: 'Información del curso próximamente.',
         image: 'https://images.unsplash.com/photo-1580301762395-2f3f06e7c7b1?q=80&w=1200&auto=format&fit=crop',
         partner: 'Por definir',
-        locations: ['Ibagué', 'Cajamarca', 'Rovira'],
+        locations: ['Ibagué', 'Cajamarca',],
         available: true,
         isNew: true,
       },

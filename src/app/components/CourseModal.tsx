@@ -108,7 +108,7 @@ export function CourseModal({
   const sessionsByCity = locations.map((city) => ({
     city,
     sessions: sessions.filter((session) => session.city === city && session.topic !== 'Inducción' && session.topic !== 'Clausura'),
-  }));
+  })).filter(({ sessions: citySessions }) => citySessions.length > 0);
 
   if (!isMounted) return null;
 

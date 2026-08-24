@@ -62,6 +62,14 @@ export function CourseCard({
     (s) => s.city === "Neiva"
   )
 
+  const cajamarcaSessions = (sessions ?? []).filter(
+    (s) => s.city === "Cajamarca"
+  )
+
+  const roviraSessions = (sessions ?? []).filter(
+    (s) => s.city === "Rovira"
+  )
+
   const [openSchedule, setOpenSchedule] = useState(false)
   const [openCourseModal, setOpenCourseModal] = useState(false)
 
@@ -319,6 +327,62 @@ export function CourseCard({
                         <div className="text-xs text-blue-600">
                           {session.partner ?? "Aliado por definir"}
                         </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {cajamarcaSessions.length > 0 && (
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-3 text-lg">
+                    Cajamarca
+                  </h4>
+
+                  <div className="space-y-2">
+                    {cajamarcaSessions.map((session, index) => (
+                      <div
+                        key={index}
+                        className="border rounded-lg p-3 text-sm space-y-1"
+                      >
+                        <div className="font-semibold">
+                          Sesión {session.session}
+                        </div>
+
+                        <div>{session.date}</div>
+                        <div>{session.time}</div>
+
+                        {session.topic && <div className="font-medium">{session.topic}</div>}
+                        <div className="text-gray-500">{session.classroom || "Por definir"}</div>
+                        {session.partner && <div className="text-xs text-blue-600">{session.partner}</div>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {roviraSessions.length > 0 && (
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-3 text-lg">
+                    Rovira
+                  </h4>
+
+                  <div className="space-y-2">
+                    {roviraSessions.map((session, index) => (
+                      <div
+                        key={index}
+                        className="border rounded-lg p-3 text-sm space-y-1"
+                      >
+                        <div className="font-semibold">
+                          Sesión {session.session}
+                        </div>
+
+                        <div>{session.date}</div>
+                        <div>{session.time}</div>
+
+                        {session.topic && <div className="font-medium">{session.topic}</div>}
+                        <div className="text-gray-500">{session.classroom || "Por definir"}</div>
+                        {session.partner && <div className="text-xs text-blue-600">{session.partner}</div>}
                       </div>
                     ))}
                   </div>
