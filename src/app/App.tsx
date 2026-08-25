@@ -25,6 +25,7 @@ import Dhamaile from '../assets/images/Dhamaile.png';
 import Cauchera from "../assets/images/confederacionCauchera.png";
 import TejidosAlTrapillo from '../assets/images/TejidosalTrapillo.jpg';
 import Trapillo2 from '../assets/images/trapillo2.jpg';
+import { definitiveSchedules, type CitySchedule } from './courseSchedules';
 
 interface Course {
   id: string
@@ -41,6 +42,7 @@ interface Course {
   registrationUrl?: string
   carouselImages?: string[]
   partnerLogo?: string
+  citySchedules?: CitySchedule[]
 }
 
 interface CourseCategory {
@@ -58,7 +60,7 @@ type CourseSession = {
   time: string
   classroom: string
   partner: string
-  city: 'Ibagué' | 'Neiva';
+  city: string;
 }
 
 export default function App() {
@@ -2187,8 +2189,9 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
       locations: ['Neiva', 'Ibagué', 'Cajamarca', 'Rovira'],
     },
     colorimetry: {
+      title: 'Colorimetría (Tinturas)',
       partner: 'Alfaparf Milano Professional',
-      locations: ['Neiva', 'Ibagué'],
+      locations: ['Ibagué'],
     },
     barbershop: {
       partner: 'FUNSE',
@@ -2203,7 +2206,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
       locations: ['Ibagué'],
     },
     bakery: {
-      title: 'Panadería',
+      title: 'Panadería Artesanal',
       partner: '3 Castillos',
       locations: ['Neiva', 'Ibagué'],
     },
@@ -2229,6 +2232,16 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
 
   const newCoursesByCategory: Record<number, Course[]> = {
     0: [
+      {
+        id: 'nail-basic',
+        title: 'Diseño y Cuidado Uñas Básico',
+        description: 'Información del curso próximamente.',
+        image: masterNailCourse?.image ?? 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop',
+        partner: 'Masglo Academy',
+        locations: ['Ibagué', 'Neiva'],
+        available: true,
+        isNew: true,
+      },
       {
         id: 'nail-design-senior',
         title: 'Diseño y cuidado de uñas Senior',
@@ -2318,6 +2331,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
       partnerLogo: Funse,
     },
     pastry: {
+      title: 'Pastelería - Repostería',
       description: 'Desarrolla técnicas de repostería para elaborar preparaciones dulces con atención al sabor, la textura y la presentación. El curso brinda una base práctica para quienes buscan fortalecer sus habilidades culinarias o impulsar sus ideas de negocio.',
       carouselImages: [
         'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFJlcG9zdGVyJUMzJUFEYXxlbnwwfHwwfHx8MA%3D%3D',
@@ -2441,6 +2455,60 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
   courseCategories.forEach((category) => {
     category.courses.forEach((course) => {
       if (courseSchedules[course.id]) course.sessions = courseSchedules[course.id];
+    });
+  });
+
+  // El cronograma definitivo se conserva por curso y ciudad. No se reutilizan
+  // sesiones previas para evitar que el modal mezcle información entre sedes.
+  courseCategories.forEach((category) => {
+    category.courses.forEach((course) => {
+      const citySchedules = definitiveSchedules[course.id];
+      if (citySchedules) {
+        course.citySchedules = citySchedules;
+        course.locations = citySchedules.map((schedule) => schedule.city);
+        course.sessions = citySchedules.flatMap((schedule) => [
+          {
+            session: 0,
+            date: schedule.induction.date,
+            day: '',
+            topic: 'Inducción',
+            time: schedule.induction.time,
+            classroom: schedule.induction.place,
+            partner: course.partner,
+            city: schedule.city,
+          },
+          ...schedule.sessions.flatMap((entry, sessionIndex) => entry.dates.map((date) => ({
+            session: sessionIndex + 1,
+            date,
+            day: '',
+            topic: entry.label,
+            time: entry.time ?? '',
+            classroom: '',
+            partner: course.partner,
+            city: schedule.city,
+          }))),
+          ...(schedule.complementary?.dates.map((date) => ({
+            session: 0,
+            date,
+            day: '',
+            topic: 'Sesiones complementarias',
+            time: schedule.complementary?.information ?? '',
+            classroom: schedule.transversalPlace ?? '',
+            partner: course.partner,
+            city: schedule.city,
+          })) ?? []),
+          {
+            session: 99,
+            date: schedule.closure.date,
+            day: '',
+            topic: 'Clausura',
+            time: schedule.closure.time ?? '',
+            classroom: schedule.closure.place ?? '',
+            partner: course.partner,
+            city: schedule.city,
+          },
+        ]);
+      }
     });
   });
 
@@ -2594,6 +2662,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
                       description={course.description}
                       image={course.image}
                       sessions={course.sessions}
+                      citySchedules={course.citySchedules}
                       partner={course.partner}
                       available={course.available}
                       locations={course.locations ?? []}

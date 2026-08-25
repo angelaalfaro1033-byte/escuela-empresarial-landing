@@ -2,6 +2,7 @@ import { motion } from "motion/react"
 import { ExternalLink, MapPin } from "lucide-react"
 import { useState } from "react"
 import { CourseModal } from "./CourseModal"
+import type { CitySchedule } from "../courseSchedules"
 
 interface Session {
   session: number
@@ -11,7 +12,7 @@ interface Session {
   time: string
   classroom: string
   partner: string
-  city: "Ibagué" | "Neiva"
+  city: string
 }
 
 interface CourseCardProps {
@@ -30,6 +31,7 @@ interface CourseCardProps {
   category?: string
   carouselImages?: string[]
   partnerLogo?: string
+  citySchedules?: CitySchedule[]
 }
 
 export function CourseCard({
@@ -48,6 +50,7 @@ export function CourseCard({
   category = "Curso",
   carouselImages,
   partnerLogo,
+  citySchedules,
 }: CourseCardProps) {
 
   const previewSessions = (sessions ?? []).slice(0, 2)
@@ -250,8 +253,48 @@ export function CourseCard({
 
             <div className="grid md:grid-cols-2 gap-6">
 
+              {citySchedules && citySchedules.map((schedule) => (
+                <div key={schedule.city}>
+                  <h4 className="font-semibold text-gray-800 mb-3 text-lg">
+                    {schedule.city}
+                  </h4>
+
+                  <div className="space-y-2">
+                    <div className="border rounded-lg p-3 text-sm space-y-1">
+                      <div className="font-semibold">Inducción</div>
+                      <div>{schedule.induction.date}</div>
+                      <div>{schedule.induction.time}</div>
+                      <div className="text-gray-500">{schedule.induction.place}</div>
+                    </div>
+                    {schedule.sessions.map((session) => (
+                      <div key={session.label} className="border rounded-lg p-3 text-sm space-y-1">
+                        <div className="font-semibold">{session.label}</div>
+                        {session.dates.map((date) => <div key={date}>{date}</div>)}
+                        {session.time && <div>{session.time}</div>}
+                      </div>
+                    ))}
+                    {schedule.complementary && (
+                      <div className="border rounded-lg p-3 text-sm space-y-1">
+                        <div className="font-semibold">Sesiones complementarias</div>
+                        {schedule.complementary.dates.map((date) => <div key={date}>{date}</div>)}
+                        {schedule.complementary.information && <div className="text-gray-500">{schedule.complementary.information}</div>}
+                      </div>
+                    )}
+                    <div className="border rounded-lg p-3 text-sm space-y-1">
+                      <div className="font-semibold">Clausura</div>
+                      <div>{schedule.closure.date}</div>
+                      {schedule.closure.time && <div>{schedule.closure.time}</div>}
+                      {schedule.closure.place && <div className="text-gray-500">{schedule.closure.place}</div>}
+                    </div>
+                    {schedule.practicalPlace && <div className="border rounded-lg p-3 text-sm space-y-1"><div className="font-semibold">Lugar capacitaciones prácticas</div><div className="text-gray-500">{schedule.practicalPlace}</div></div>}
+                    {schedule.transversalPlace && <div className="border rounded-lg p-3 text-sm space-y-1"><div className="font-semibold">Lugar capacitaciones transversales</div><div className="text-gray-500">{schedule.transversalPlace}</div></div>}
+                    {schedule.additionalInformation && <div className="border rounded-lg p-3 text-sm text-gray-500">{schedule.additionalInformation}</div>}
+                  </div>
+                </div>
+              ))}
+
               {/* IBAGUÉ */}
-              {ibagueSessions.length > 0 && (
+              {!citySchedules && ibagueSessions.length > 0 && (
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-3 text-lg">
                     Ibagué
@@ -291,7 +334,7 @@ export function CourseCard({
               )}
 
               {/* NEIVA */}
-              {neivaSessions.length > 0 && (
+              {!citySchedules && neivaSessions.length > 0 && (
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-3 text-lg">
                     Neiva
@@ -333,7 +376,7 @@ export function CourseCard({
                 </div>
               )}
 
-              {cajamarcaSessions.length > 0 && (
+              {!citySchedules && cajamarcaSessions.length > 0 && (
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-3 text-lg">
                     Cajamarca
@@ -361,7 +404,7 @@ export function CourseCard({
                 </div>
               )}
 
-              {roviraSessions.length > 0 && (
+              {!citySchedules && roviraSessions.length > 0 && (
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-3 text-lg">
                     Rovira

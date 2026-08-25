@@ -184,24 +184,7 @@ export function CourseModal({
                         {course.description}
                       </p>
 
-                      <div className="mb-4 space-y-3">
-                        {sessionsByCity.map(({ city, sessions: citySessions }) => (
-                          <div key={city} className="bg-gray-50 rounded-lg p-4 border-l-2" style={{ borderColor: categoryColor.bg }}>
-                            <p className="text-sm font-semibold text-gray-800">📍 {city}</p>
-                            {citySessions.length > 0 ? (
-                              <div className="mt-2 space-y-1 text-sm text-gray-600">
-                                {citySessions.map((session, index) => (
-                                  <p key={`${city}-${index}`}>
-                                    Fecha: {session.date} · Horario: {session.time}{session.classroom ? ` · Salón: ${session.classroom}` : ''}
-                                  </p>
-                                ))}
-                              </div>
-                            ) : (
-                              <p className="mt-2 text-sm text-gray-600">Actualmente no hay fechas disponibles para este curso en {city}.</p>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                     
                       
                     {available && registrationUrl && registrationUrl !== '#' && (
   <div 

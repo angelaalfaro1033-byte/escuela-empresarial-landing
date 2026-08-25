@@ -113,8 +113,8 @@ export function StatsSection() {
     { period: '2024 - B', value: 244 },
     { period: '2025 - A', value: 130 },
     { period: '2025 - B', value: 86 },
+    { period: '2026 - A', value: 127 },
   ];
-
   const maxValue = Math.max(...periods.map(p => p.value));
   const totalGraduates = 587;
 
