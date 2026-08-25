@@ -116,7 +116,7 @@ export function StatsSection() {
     { period: '2026 - A', value: 127 },
   ];
   const maxValue = Math.max(...periods.map(p => p.value));
-  const totalGraduates = 587;
+  const totalGraduates = 714;
 
   return (
     <section className="relative py-20 px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 overflow-hidden">
@@ -148,7 +148,7 @@ export function StatsSection() {
         </motion.div>
 
         {/* Main Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
 <StatCard
             value={totalGraduates}
             label="Total Graduados"
@@ -173,6 +173,13 @@ export function StatsSection() {
             delay={0.3}
             icon={<Calendar className="w-12 h-12" />}
             hoverColor="bg-[#0047CC]" // 👈 azul 2
+          />
+          <StatCard
+            value={127}
+            label="Graduados 2026"
+            delay={0.4}
+            icon={<Award className="w-12 h-12" />}
+            hoverColor="bg-[#D94EE6]"
           />
         </div>   
 
