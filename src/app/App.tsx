@@ -26,7 +26,8 @@ import Cauchera from "../assets/images/confederacionCauchera.png";
 import TejidosAlTrapillo from '../assets/images/TejidosalTrapillo.jpg';
 import Trapillo2 from '../assets/images/trapillo2.jpg';
 import { definitiveSchedules, type CitySchedule } from './courseSchedules';
-
+import { InstagramEmbed } from "./components/InstagramEmbed";
+import { FacebookEmbed } from "./components/FacebookEmbed";
 interface Course {
   id: string
   title: string
@@ -2683,6 +2684,45 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
         </div>
       </section>
             <SponsorLogos />
+           
+
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="mt-20 mb-16"
+>
+  {/* Encabezado */}
+  <div className="text-center mb-10">
+    <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      Momentos que inspiran
+    </h3>
+
+    <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
+      Conoce algunas de las experiencias, actividades y momentos
+      que hacen parte de nuestra Escuela Empresarial.
+    </p>
+  </div>
+
+  {/* Publicaciones */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-items-center">
+
+    {/* Instagram */}
+    <div className="w-full flex justify-center">
+      <InstagramEmbed
+        url="https://www.instagram.com/p/DZKrz8mgHxy/"
+      />
+    </div>
+
+    {/* Facebook */}
+    <div className="w-full flex justify-center">
+      <FacebookEmbed
+        url="https://www.facebook.com/ccdeibague/posts/pfbid0gaz6eK1FvJUA2xX15dmDXUsgBdQwxdyDQ92fqSjFtWg7hZfuqcfTDL8yXzuHUVeWl"
+      />
+    </div>
+
+  </div>
+</motion.div>
       <Footer />
     </div>
   );
