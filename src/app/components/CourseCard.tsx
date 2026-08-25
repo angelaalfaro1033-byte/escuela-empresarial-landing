@@ -45,7 +45,7 @@ export function CourseCard({
   isNew = false,
   availabilityNote,
   modality,
-  registrationUrl = "#",
+  registrationUrl = "https://forms.gle/7Zv43Ekhe8x66ZLw8",
   categoryColor,
   category = "Curso",
   carouselImages,
@@ -208,25 +208,12 @@ export function CourseCard({
 
 <button
   onClick={() => {
-    if (canRegister) {
-      window.open(registrationUrl, "_blank")
-    }
+    window.open(registrationUrl, "_blank");
   }}
-  disabled={!canRegister}
-  className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
-    canRegister
-      ? "bg-[#D94EE6] text-white hover:bg-[#c13bcc] hover:shadow-lg hover:-translate-y-0.5"
-      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-  }`}
+  className="w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 bg-[#D94EE6] text-white hover:bg-[#c13bcc] hover:shadow-lg hover:-translate-y-0.5"
 >
-  {canRegister ? (
-    <>
-      Registrarse
-      <ExternalLink className="w-4 h-4" />
-    </>
-  ) : (
-    available ? "Pre-registro próximamente" : "No disponible"
-  )}
+  Registrarse
+  <ExternalLink className="w-4 h-4" />
 </button>
         </div>
       </motion.div>
