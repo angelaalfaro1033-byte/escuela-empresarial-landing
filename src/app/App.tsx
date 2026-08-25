@@ -384,7 +384,7 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1673985402265-46c4d2e53982?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   ],
    partnerLogo: Masglo,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+          registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
         },
        
 
@@ -674,7 +674,7 @@ city:"Ibagué"
     'https://plus.unsplash.com/premium_photo-1679750867572-8ce0c81f7c0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1ha2V1cHxlbnwwfHwwfHx8MA%3D%3D',
   ],
    partnerLogo: Masglo,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+          registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
         },
         {
           id: 'colorimetry',
@@ -963,7 +963,7 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1648313143853-aa913f6ad44a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY1fHxwZWx1cXVlcmlhfGVufDB8fDB8fHww',
   ],
    partnerLogo: Alfaparf,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+          registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
         },
        {
   id: 'barbershop',
@@ -1122,7 +1122,7 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1651923098148-1c39bfa23331?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA1fHxwZWx1cXVlcmlhfGVufDB8fDB8fHww',
   ],
    partnerLogo: Funse,
-  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+  registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
         },
       ],
     },
@@ -1417,7 +1417,7 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1718791985055-e1b06ef5961d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFyaXN0YSUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D',
   ],
    partnerLogo: Amore,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+          registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
         },
         {
   id: 'chocolate',
@@ -1575,7 +1575,7 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1504205758521-892897f3a28e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ1fHx8ZW58MHx8fHx8',
   ],
    partnerLogo: Pastel,
-  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+  registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
 },
         {
           id: 'bakery',
@@ -1863,7 +1863,7 @@ city:"Ibagué"
     'https://images.unsplash.com/photo-1450862479751-84eeaf2fcca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY5fHxwYW5hZGVyJUMzJUFEYXxlbnwwfHwwfHx8MA%3D%3D',
   ],
    partnerLogo: TresCastillos,
-          registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+          registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
         },
       ],
     },
@@ -2171,7 +2171,7 @@ image: 'https://images.unsplash.com/photo-1770806630106-f3319f9d4ff2?crop=entrop
     'https://images.unsplash.com/photo-1770804545377-98b051c2bc4b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE0fHxkZWNvcmFjaSVDMyVCM24lMjBnbG9ib3N8ZW58MHx8MHx8fDA%3D',
   ],
    partnerLogo: Sempertex,
-  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header',
+  registrationUrl: 'https://forms.gle/7Zv43Ekhe8x66ZLw8',
 },
       ],
     },

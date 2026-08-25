@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
-const registrationUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header';
+const registrationUrl = 'https://forms.gle/7Zv43Ekhe8x66ZLw8';
 
 export function Footer() {
   return (

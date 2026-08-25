@@ -3,7 +3,7 @@ import { ArrowDown, ExternalLink } from "lucide-react";
 import heroImg from "../../assets/images/herox.jpg";
 import logoImg from "../../assets/images/logo.png";
 
-const registrationUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeyPeZXgeB8SG9DQTxIIK-obHuK_sk6XYGlNwZSoD_t3MnMNg/viewform?usp=header';
+const registrationUrl = 'https://forms.gle/7Zv43Ekhe8x66ZLw8';
 
 export function Header() {
   return (

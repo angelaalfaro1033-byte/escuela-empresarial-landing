@@ -44,14 +44,12 @@ export function SponsorLogos() {
     },
     {
       image: Amore,
-      // TODO: Confirmar el perfil o sitio oficial de Amore Café antes de publicar.
-      website: 'https://www.instagram.com/amorecafeibague/',
+      website: '#',
       category: 'Gastronomía',
     },
     {
       image: Pastel,
-      // TODO: Sustituir por la web oficial de M.D.P. cuando sea proporcionada.
-      website: 'https://www.instagram.com/mdppasteleria/',
+      website: '#',
       category: 'Gastronomía',
     },
     {
@@ -76,8 +74,7 @@ export function SponsorLogos() {
     },
     {
       image: Dhamaile,
-      // TODO: Confirmar la URL oficial de Dhamaile Chocolatería Fina antes de publicar.
-      website: 'https://dhamaile.com/',
+      website: '#',
       category: 'Gastronomía',
     },
     {
@@ -87,9 +84,14 @@ export function SponsorLogos() {
     },
     {
       image: Rucary,
-      // TODO: Configurar la URL oficial de Rucary cuando sea proporcionada.
       website: '#',
       category: 'Aliado',
+    },
+
+    {
+      image: Richs,
+      website: 'https://www.richs.com.co/',
+      category: 'Gastronomía',
     },
   ];
 
@@ -276,82 +278,101 @@ export function SponsorLogos() {
       </motion.div>
 
       {/* Colaboración Especial */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h3 className="text-3xl md:text-4xl font-bold text-center mt-15 mb-8 text-gray-800">
-          Colaboración Especial
-        </h3>
+    <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="text-center mb-12"
+>
+  <h3 className="text-3xl md:text-4xl font-bold text-center mt-15 mb-8 text-gray-800">
+    Colaboración Especial
+  </h3>
 
-        <div className="flex flex-wrap justify-center gap-8">
+  <div className="flex flex-col items-center gap-8">
 
-          {/* Recuadro 1 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
-            <div className="flex flex-col items-center gap-4">
-              <a href="https://www.ut.edu.co/" target="_blank" rel="noreferrer" aria-label="Visitar Universidad del Tolima" className={linkClassName}>
-              <img
-                src={logoUT}
-                alt="Logo UT"
-                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              </a>
-            </div>
-          </div>
+    {/* UNIVERSIDAD DEL TOLIMA - ARRIBA */}
+    <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+      <div className="flex flex-col items-center gap-4">
+        <a
+          href="https://www.ut.edu.co/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visitar Universidad del Tolima"
+          className={linkClassName}
+        >
+          <img
+            src={logoUT}
+            alt="Logo UT"
+            className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </a>
+      </div>
+    </div>
 
-          {/* Recuadro 2 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
-            <div className="flex flex-col items-center gap-4">
-              <a href="https://www.uniminuto.edu/" target="_blank" rel="noreferrer" aria-label="Visitar UNIMINUTO" className={linkClassName}>
-              <img
-                src={logoUniminuto}
-                alt="Logo UNIMINUTO"
-                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              </a>
-            </div>
-          </div>
+    {/* UNIMINUTO + UNIVERSIDAD COOPERATIVA */}
+    <div className="flex flex-wrap justify-center gap-8">
 
-          {/* Recuadro 3 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
-            <div className="flex flex-col items-center gap-4">
-              <a href="https://www.tolima.gov.co/" target="_blank" rel="noreferrer" aria-label="Visitar Gobernación del Tolima" className={linkClassName}>
-              <img
-                src={logoGonernacionTolima}
-                alt="Logo Gobernación del Tolima"
-                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              </a>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
-            <div className="flex flex-col items-center gap-4">
-              <a href="https://www.ucc.edu.co/" target="_blank" rel="noreferrer" aria-label="Visitar Universidad Cooperativa de Colombia" className={linkClassName}>
-              <img
-                src={UniCooperativa}
-                alt="Logo Universidad Cooperativa"
-                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              </a>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
-            <div className="flex flex-col items-center gap-4">
-              <a href="https://www.richs.com.co/" target="_blank" rel="noreferrer" aria-label="Visitar Rich's" className={linkClassName}>
-              <img
-                src={Richs}
-                alt="Logo RICH"
-                className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              </a>
-            </div>
-          </div>
+      {/* UNIMINUTO */}
+      <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+        <div className="flex flex-col items-center gap-4">
+          <a
+            href="https://www.uniminuto.edu/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visitar UNIMINUTO"
+            className={linkClassName}
+          >
+            <img
+              src={logoUniminuto}
+              alt="Logo UNIMINUTO"
+              className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </a>
         </div>
-      </motion.div>
+      </div>
+
+      {/* UNIVERSIDAD COOPERATIVA */}
+      <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+        <div className="flex flex-col items-center gap-4">
+          <a
+            href="https://www.ucc.edu.co/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visitar Universidad Cooperativa de Colombia"
+            className={linkClassName}
+          >
+            <img
+              src={UniCooperativa}
+              alt="Logo Universidad Cooperativa"
+              className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    {/* GOBERNACIÓN - AL FINAL */}
+    <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300 w-72">
+      <div className="flex flex-col items-center gap-4">
+        <a
+          href="https://www.tolima.gov.co/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visitar Gobernación del Tolima"
+          className={linkClassName}
+        >
+          <img
+            src={logoGonernacionTolima}
+            alt="Logo Gobernación del Tolima"
+            className="w-44 h-44 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</motion.div>
 
       {/* Info text */}
       <motion.div
